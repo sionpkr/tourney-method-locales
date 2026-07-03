@@ -11,8 +11,8 @@ unreleased strings are not published here.
 - English (`en`) — source language
 - Korean (`ko`)
 - Russian (`ru`)
-- Simplified Chinese (`zh-Hans`)
-- Traditional Chinese (`zh-Hant`)
+- Simplified Chinese (`zh-CN`)
+- Traditional Chinese (`zh-TW`)
 and many more!
 
 ## Contributing

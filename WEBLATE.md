@@ -28,7 +28,7 @@ Use these settings for every component:
 - File format: Laravel PHP strings
 - Source language: English
 - Template for new translations: the matching `lang/en/<file>.php`
-- Language code style: POSIX-style codes compatible with the existing folders
+- Language code style: BCP 47-style codes compatible with the existing folders
 - Repository branch: `main`
 - Push branch: `main`
 - Push on commit: enabled
