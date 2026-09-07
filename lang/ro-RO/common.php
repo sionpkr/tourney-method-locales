@@ -30,6 +30,10 @@ return [
         'admin' => 'Admin',
         'profile' => 'Profil',
         'settings' => 'Setări',
+        'device_theme' => 'Device theme',
+        'use_device_theme' => 'Use Device theme',
+        'dark_theme' => 'Dark theme',
+        'light_theme' => 'Light theme',
         'search' => 'Caută',
         'logout' => 'Deconectare',
         'login_with_osu' => 'Autentifică-te cu osu!',
@@ -43,6 +47,7 @@ return [
     'notifications' => [
         'title' => 'Notificări',
         'read_all' => 'Citește toate notificările',
+        'remove_read' => 'Remove all read notifications',
         'loading' => 'Se încarcă notificările...',
         'empty' => 'Încă nu există notificări.',
         'fields' => [

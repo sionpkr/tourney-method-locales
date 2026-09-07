@@ -30,6 +30,10 @@ return [
         'admin' => '관리자',
         'profile' => '프로필',
         'settings' => '설정',
+        'device_theme' => 'Device theme',
+        'use_device_theme' => 'Use Device theme',
+        'dark_theme' => 'Dark theme',
+        'light_theme' => 'Light theme',
         'search' => '검색',
         'logout' => '로그아웃',
         'login_with_osu' => 'osu!로 로그인',
@@ -43,6 +47,7 @@ return [
     'notifications' => [
         'title' => '알림',
         'read_all' => '모든 알림 읽기',
+        'remove_read' => 'Remove all read notifications',
         'loading' => '알림 로드 중...',
         'empty' => '읽지 않은 알림이 없습니다.',
         'fields' => [

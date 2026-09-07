@@ -30,6 +30,10 @@ return [
         'admin' => 'Админ панель',
         'profile' => 'Профиль',
         'settings' => 'Настройки',
+        'device_theme' => 'Device theme',
+        'use_device_theme' => 'Use Device theme',
+        'dark_theme' => 'Dark theme',
+        'light_theme' => 'Light theme',
         'search' => 'Поиск',
         'logout' => 'Выйти из аккаунта',
         'login_with_osu' => 'Войти с помощью osu!',
@@ -43,6 +47,7 @@ return [
     'notifications' => [
         'title' => 'Уведомления',
         'read_all' => 'Отметить всё прочитанным',
+        'remove_read' => 'Remove all read notifications',
         'loading' => 'Загрузка уведомлений...',
         'empty' => 'Еще нет уведомлений.',
         'fields' => [

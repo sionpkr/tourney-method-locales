@@ -8,6 +8,7 @@ return [
         'tournaments' => '比赛',
         'players' => '玩家',
         'view_all_tournaments' => '查看全部 :count 个比赛结果',
+        'view_all_players' => 'View all user results (Coming soon)',
         'no_tournaments' => '未找到匹配的比赛',
         'no_players' => '未找到匹配的玩家',
         'close_desc' => '按 :esc 关闭',

@@ -30,6 +30,10 @@ return [
         'admin' => '管理',
         'profile' => '个人资料',
         'settings' => '设置',
+        'device_theme' => 'Device theme',
+        'use_device_theme' => 'Use Device theme',
+        'dark_theme' => 'Dark theme',
+        'light_theme' => 'Light theme',
         'search' => '搜索',
         'logout' => '退出登录',
         'login_with_osu' => '使用 osu! 账号登录',
@@ -43,6 +47,7 @@ return [
     'notifications' => [
         'title' => '通知',
         'read_all' => '阅读所有通知',
+        'remove_read' => 'Remove all read notifications',
         'loading' => '正在加载通知……',
         'empty' => '暂无通知。',
         'fields' => [

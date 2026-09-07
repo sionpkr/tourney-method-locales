@@ -23,7 +23,7 @@ return [
         'staff' => 'Стафф',
         'player' => 'Призовые Места',
         'all_roles' => 'Все роли',
-        'badged' => 'badged',
+        'badged' => 'Badged',
         'see_more' => 'Показать ещё (:count)',
         'see_less' => 'Скрыть',
         'no_staff' => 'Нет стафф ролей',

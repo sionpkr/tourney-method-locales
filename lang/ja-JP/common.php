@@ -30,6 +30,10 @@ return [
         'admin' => 'Admin',
         'profile' => 'Profile',
         'settings' => 'Settings',
+        'device_theme' => 'Device theme',
+        'use_device_theme' => 'Use Device theme',
+        'dark_theme' => 'Dark theme',
+        'light_theme' => 'Light theme',
         'search' => 'Search',
         'logout' => 'Logout',
         'login_with_osu' => 'Login with osu!',
@@ -43,6 +47,7 @@ return [
     'notifications' => [
         'title' => 'Notifications',
         'read_all' => 'Read all notifications',
+        'remove_read' => 'Remove all read notifications',
         'loading' => 'Loading notifications...',
         'empty' => 'No notifications yet.',
         'fields' => [

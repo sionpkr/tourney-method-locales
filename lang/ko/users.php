@@ -23,7 +23,7 @@ return [
         'staff' => '스태프 기록',
         'player' => '입상 기록',
         'all_roles' => '전체 역할',
-        'badged' => 'badged',
+        'badged' => 'Badged',
         'see_more' => '더 보기 (:count개)',
         'see_less' => '축소하기',
         'no_staff' => '스태프 기록 없음',

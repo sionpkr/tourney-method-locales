@@ -8,6 +8,7 @@ return [
         'tournaments' => 'Torneos',
         'players' => 'Jugadores',
         'view_all_tournaments' => 'Mira todos los :count resultados del torneo',
+        'view_all_players' => 'View all user results (Coming soon)',
         'no_tournaments' => 'No se encontraron torneos',
         'no_players' => 'No se encontraron jugadores',
         'close_desc' => 'Presiona :esc para cerrar',

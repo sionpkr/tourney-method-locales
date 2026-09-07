@@ -30,6 +30,10 @@ return [
         'admin' => 'Admin',
         'profile' => 'Profil',
         'settings' => 'Inställningar',
+        'device_theme' => 'Device theme',
+        'use_device_theme' => 'Use Device theme',
+        'dark_theme' => 'Dark theme',
+        'light_theme' => 'Light theme',
         'search' => 'Sök',
         'logout' => 'Logga ut',
         'login_with_osu' => 'Login with osu!',
@@ -43,6 +47,7 @@ return [
     'notifications' => [
         'title' => 'Meddelanden',
         'read_all' => 'Läs alla meddelanden',
+        'remove_read' => 'Remove all read notifications',
         'loading' => 'Laddar meddelanden...',
         'empty' => 'Inga meddelanden ännu.',
         'fields' => [
