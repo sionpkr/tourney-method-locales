@@ -6,8 +6,9 @@ application synchronized with the
 
 The workflow runs daily, can be dispatched manually, and runs immediately when
 an English source file under `lang/en/` changes. Push and manual runs upload
-English sources before all current translations are downloaded. Untranslated strings retain
-their English source value so every locale remains structurally complete.
+English sources before all current translations are downloaded. The workflow
+fills missing, empty, or placeholder-incompatible values from English so every
+locale remains structurally complete.
 
 The workflow validates every exported locale before committing changes to
 `main`. After the public revision is current, it imports the locale snapshot

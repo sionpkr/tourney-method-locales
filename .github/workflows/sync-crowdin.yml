@@ -67,6 +67,9 @@ jobs:
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
 
+      - name: Fill untranslated values from English
+        run: php tools/normalize-locales.php
+
       - name: Validate downloaded locales
         run: php tools/validate-locales.php
 
