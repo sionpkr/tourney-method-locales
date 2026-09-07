@@ -39,7 +39,7 @@ jobs:
           fi
 
       - name: Upload changed English sources to Crowdin
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: crowdin/github-action@0d5670f539973aea2f01abce61a8989934df0025
         with:
           upload_sources: true
@@ -141,6 +141,6 @@ jobs:
             Public locale revision: `${{ steps.public.outputs.sha }}`
 
             English sources were uploaded to Crowdin when this run was triggered
-            by an English locale update. All downloaded locales passed the public
+            manually or by an English locale update. All downloaded locales passed the public
             validator before import.
           labels: translations

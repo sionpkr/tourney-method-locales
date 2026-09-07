@@ -5,8 +5,8 @@ application synchronized with the
 [`tourney-method` Crowdin project](https://crowdin.com/project/tourney-method).
 
 The workflow runs daily, can be dispatched manually, and runs immediately when
-an English source file under `lang/en/` changes. English changes are uploaded
-before all current translations are downloaded. Untranslated strings retain
+an English source file under `lang/en/` changes. Push and manual runs upload
+English sources before all current translations are downloaded. Untranslated strings retain
 their English source value so every locale remains structurally complete.
 
 The workflow validates every exported locale before committing changes to
