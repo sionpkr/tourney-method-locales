@@ -6,7 +6,8 @@
 4. Do not add application secrets, private links, internal implementation
    details, or announcements for unreleased features.
 5. Run `php tools/validate-locales.php`.
-6. Submit the change through Weblate or a GitHub pull request.
+6. Submit translations through Crowdin or use a GitHub pull request for an
+   English source change or translation correction.
 
 By contributing, you agree that your translation is provided under the
 repository's MIT License.

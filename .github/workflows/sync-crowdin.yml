@@ -1,0 +1,146 @@
+name: Sync Crowdin locales
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 17 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'lang/en/**/*.php'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-crowdin-locales
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out public locales
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@b604ade2a87db23f8871b7182e69ec5e75effb45
+        with:
+          php-version: '8.4'
+
+      - name: Verify Crowdin credentials
+        env:
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+        run: |
+          if [[ -z "$CROWDIN_PROJECT_ID" || -z "$CROWDIN_PERSONAL_TOKEN" ]]; then
+            echo "::error::Configure CROWDIN_PROJECT_ID and CROWDIN_PERSONAL_TOKEN as repository Actions secrets."
+            exit 1
+          fi
+
+      - name: Upload changed English sources to Crowdin
+        if: github.event_name == 'push'
+        uses: crowdin/github-action@0d5670f539973aea2f01abce61a8989934df0025
+        with:
+          upload_sources: true
+          upload_translations: false
+          download_translations: false
+          push_sources: false
+          push_translations: false
+          create_pull_request: false
+        env:
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+
+      - name: Download latest Crowdin translations
+        uses: crowdin/github-action@0d5670f539973aea2f01abce61a8989934df0025
+        with:
+          upload_sources: false
+          upload_translations: false
+          download_translations: true
+          skip_untranslated_strings: false
+          skip_untranslated_files: false
+          export_only_approved: false
+          push_translations: false
+          create_pull_request: false
+        env:
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+
+      - name: Validate downloaded locales
+        run: php tools/validate-locales.php
+
+      - name: Detect changes to propagate
+        id: changes
+        shell: bash
+        run: |
+          public_changed=false
+          if git status --porcelain -- lang | grep -q .; then
+            public_changed=true
+          fi
+
+          propagate=$public_changed
+          if [[ "$GITHUB_EVENT_NAME" == "push" ]]; then
+            propagate=true
+          fi
+
+          echo "public_changed=$public_changed" >> "$GITHUB_OUTPUT"
+          echo "propagate=$propagate" >> "$GITHUB_OUTPUT"
+
+      - name: Commit public translation updates
+        if: steps.changes.outputs.public_changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lang
+          git commit -m "chore: sync Crowdin translations"
+          git push origin HEAD:main
+
+      - name: Record public locale revision
+        if: steps.changes.outputs.propagate == 'true'
+        id: public
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Verify private repository credential
+        if: steps.changes.outputs.propagate == 'true'
+        env:
+          PRIVATE_REPO_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
+        run: |
+          if [[ -z "$PRIVATE_REPO_TOKEN" ]]; then
+            echo "::error::Configure PRIVATE_REPO_TOKEN as a repository Actions secret."
+            exit 1
+          fi
+
+      - name: Check out private application
+        if: steps.changes.outputs.propagate == 'true'
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: sionpkr/tourney-method-private
+          ref: master
+          path: _private
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+          persist-credentials: false
+
+      - name: Import public locales into private application
+        if: steps.changes.outputs.propagate == 'true'
+        run: php _private/tools/import-public-locales.php . _private
+
+      - name: Open or refresh private translation pull request
+        if: steps.changes.outputs.propagate == 'true'
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1
+        with:
+          path: _private
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+          branch: automation/sync-public-locales
+          delete-branch: true
+          commit-message: 'chore: sync public translations'
+          title: 'chore: sync public translations'
+          body: |
+            Automated synchronization from `sionpkr/tourney-method-locales`.
+
+            Public locale revision: `${{ steps.public.outputs.sha }}`
+
+            English sources were uploaded to Crowdin when this run was triggered
+            by an English locale update. All downloaded locales passed the public
+            validator before import.
+          labels: translations

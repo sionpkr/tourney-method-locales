@@ -8,17 +8,15 @@ unreleased strings are not published here.
 
 ## Languages
 
-- English (`en`) — source language
-- Korean (`ko`)
-- Russian (`ru`)
-- Simplified Chinese (`zh-CN`)
-- Traditional Chinese (`zh-TW`)
-and many more!
+English (`en`) is the source language. Every complete target language exported
+by [Crowdin](https://crowdin.com/project/tourney-method) is validated and kept
+in this repository using its BCP 47 locale code.
 
 ## Contributing
 
-The preferred translation interface is Hosted Weblate. Until the Hosted
-Weblate Libre application is approved, pull requests are also welcome.
+The preferred translation interface is
+[Crowdin](https://crowdin.com/project/tourney-method). Pull requests are also
+welcome for English source changes and translation corrections.
 
 Please preserve Laravel placeholders such as `:name`, `:count`, and `:id`
 exactly. Run the validator before opening a pull request:
@@ -28,7 +26,7 @@ php tools/validate-locales.php
 ```
 
 Translations contributed here are licensed under the MIT License. Contributors
-are credited through Git history and Weblate contribution history.
+are credited through Git history and Crowdin contribution history.
 
 ## Repository policy
 
@@ -39,4 +37,4 @@ are credited through Git history and Weblate contribution history.
 - Translation changes are reviewed and synchronized into the private
   application repository by automation.
 
-See [WEBLATE.md](WEBLATE.md) for the component configuration.
+See [CROWDIN.md](CROWDIN.md) for synchronization and credential requirements.
