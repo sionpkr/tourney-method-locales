@@ -1,7 +1,14 @@
 <?php
 
+$localeDirectories = glob(dirname(__DIR__).'/lang/*', GLOB_ONLYDIR) ?: [];
+$locales = array_values(array_filter(
+    array_map('basename', $localeDirectories),
+    fn (string $locale): bool => preg_match('/^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$/D', $locale) === 1,
+));
+sort($locales);
+
 return [
-    'locales' => ['en', 'es', 'ko', 'ru', 'zh-CN', 'zh-TW'],
+    'locales' => $locales,
     'files' => [
         'auth.php',
         'common.php',

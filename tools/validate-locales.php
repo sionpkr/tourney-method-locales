@@ -5,6 +5,23 @@ declare(strict_types=1);
 $root = dirname(__DIR__);
 $policy = require $root.'/config/public-locales.php';
 $errors = [];
+$locales = [];
+foreach (scandir($root.'/lang') ?: [] as $entry) {
+    if ($entry === '.' || $entry === '..' || ! is_dir($root.'/lang/'.$entry)) {
+        continue;
+    }
+    if (preg_match('/^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$/D', $entry) !== 1) {
+        $errors[] = "Invalid locale directory: lang/{$entry}";
+
+        continue;
+    }
+    $locales[] = $entry;
+}
+sort($locales);
+if (! in_array('en', $locales, true)) {
+    $errors[] = 'Missing source locale directory: lang/en';
+}
+$locales = ['en', ...array_values(array_diff($locales, ['en']))];
 $flatten = function (array $values, string $prefix = '') use (&$flatten): array {
     $result = [];
     foreach ($values as $key => $value) {
@@ -26,7 +43,7 @@ $placeholders = function (string $value): array {
     return $result;
 };
 $expectedPaths = [];
-foreach ($policy['locales'] as $locale) {
+foreach ($locales as $locale) {
     foreach ($policy['files'] as $file) {
         $expectedPaths["{$locale}/{$file}"] = true;
     }
@@ -65,7 +82,7 @@ foreach ($policy['files'] as $file) {
     }
     $source[$file] = $flatten($sourceValues);
 }
-foreach ($policy['locales'] as $locale) {
+foreach ($locales as $locale) {
     foreach ($policy['files'] as $file) {
         $path = $root."/lang/{$locale}/{$file}";
         if (! is_file($path)) {
