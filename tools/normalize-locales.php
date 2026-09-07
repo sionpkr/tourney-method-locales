@@ -71,7 +71,10 @@ foreach (glob($root.'/lang/*', GLOB_ONLYDIR) ?: [] as $localeDirectory) {
             continue;
         }
 
-        file_put_contents($path, "<?php\n\nreturn ".var_export($normalized, true).";\n");
+        $written = file_put_contents($path, "<?php\n\nreturn ".var_export($normalized, true).";\n");
+        if ($written === false) {
+            throw new RuntimeException("Unable to normalize locale file: {$path}");
+        }
     }
 }
 
