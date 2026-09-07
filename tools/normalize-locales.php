@@ -45,6 +45,30 @@ $normalize = function (array $source, array $translation) use (&$normalize, $pla
     return $result;
 };
 
+$export = function (mixed $value, int $depth = 0) use (&$export): string {
+    if (! is_array($value)) {
+        return match (true) {
+            $value === null => 'null',
+            $value === true => 'true',
+            $value === false => 'false',
+            default => var_export($value, true),
+        };
+    }
+
+    if ($value === []) {
+        return '[]';
+    }
+
+    $indent = str_repeat('    ', $depth);
+    $itemIndent = str_repeat('    ', $depth + 1);
+    $items = [];
+    foreach ($value as $key => $item) {
+        $items[] = $itemIndent.var_export($key, true).' => '.$export($item, $depth + 1).',';
+    }
+
+    return "[\n".implode("\n", $items)."\n{$indent}]";
+};
+
 $sources = [];
 foreach ($policy['files'] as $file) {
     $source = require $root.'/lang/en/'.$file;
@@ -67,11 +91,12 @@ foreach (glob($root.'/lang/*', GLOB_ONLYDIR) ?: [] as $localeDirectory) {
         }
 
         $normalized = $normalize($source, $translation);
-        if ($normalized === $translation) {
+        $contents = is_file($path) ? file_get_contents($path) : false;
+        if ($normalized === $translation && is_string($contents) && ! str_contains($contents, 'return array (')) {
             continue;
         }
 
-        $written = file_put_contents($path, "<?php\n\nreturn ".var_export($normalized, true).";\n");
+        $written = file_put_contents($path, "<?php\n\nreturn ".$export($normalized).";\n");
         if ($written === false) {
             throw new RuntimeException("Unable to normalize locale file: {$path}");
         }
