@@ -2,9 +2,9 @@
 
 return [
     'add' => [
-        'action' => 'Add Tournament',
-        'login_action' => 'Login to Add',
-        'success' => 'New tournament request #:id was submitted for admin review.',
+        'action' => '添加比赛',
+        'login_action' => '登录以添加',
+        'success' => '编号为 #:id 的新赛事申请已提交，待管理员审核。',
     ],
     'title' => '浏览比赛',
     'status' => [
@@ -314,7 +314,7 @@ return [
             'bws_base_exponent' => 'BWS 排名公式中使用的底数。',
             'bws_badge_power' => '奖牌数量对加权排名的影响程度。',
             'bws_divisor' => '公式中用于奖牌加权计算的除数。',
-            'bws_badge_age_cutoff' => '计算 BWS 时，忽略在此日期之前获得的奖牌。',
+            'bws_badge_age_cutoff' => '计算 BWS 时，只计算从该日期起获得的徽章。',
             'forum_post_url' => '官方 osu! 论坛主题帖或公告页面链接。',
             'spreadsheet_url' => '包含比赛规则、赛程、图池或比赛结果的主要公开电子表格链接。',
             'discord_url' => '比赛的公开 Discord 邀请链接。',

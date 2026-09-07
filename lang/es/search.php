@@ -1,7 +1,6 @@
 <?php
 
 return [
-    // Search Modal
     'search' => [
         'placeholder' => 'Busca torneos y jugadores...',
         'start_your_search' => 'Comienza tu busqueda',

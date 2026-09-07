@@ -285,7 +285,7 @@ return [
             'submitter_note' => 'Explain what is wrong and where the correct information comes from.',
         ],
         'values' => [
-            'no_change_none' => 'No change / none',
+            'no_change_none' => '없음',
             'no_regional_restrictions' => 'No restrictions - open to all countries',
             'no_matching_countries' => 'No matching countries',
             'no_matching_templates' => 'No matching templates',
@@ -314,7 +314,7 @@ return [
             'bws_base_exponent' => 'Base exponent used in the BWS rank formula.',
             'bws_badge_power' => 'How strongly badge count affects weighted rank.',
             'bws_divisor' => 'Divisor applied to badge weighting in the formula.',
-            'bws_badge_age_cutoff' => 'Ignore badges earned after this date when calculating BWS.',
+            'bws_badge_age_cutoff' => 'Only count badges earned on or after this date when calculating BWS.',
             'forum_post_url' => 'Official osu! forum topic or announcement page.',
             'spreadsheet_url' => 'Main public spreadsheet for rules, schedules, mappools, or results.',
             'discord_url' => 'Public Discord invite for the tournament.',

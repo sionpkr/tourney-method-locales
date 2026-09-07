@@ -23,7 +23,7 @@ return [
         'staff' => '工作人員經歷',
         'player' => '獲獎紀錄',
         'all_roles' => '所有職位',
-        'badged' => '官方獎牌',
+        'badged' => 'badged',
         'see_more' => '查看更多 (:count)',
         'see_less' => '收起',
         'no_staff' => '暫無工作人員經歷',

@@ -20,8 +20,8 @@ return [
             1 => '滚动到底部贡献部分。',
             2 => '点击校正比赛，只需提交需要更改的部分。',
         ],
-        'add_body' => 'Or you can request to add a new tournament if it is not listed yet.',
-        'add_action' => 'Add Tournament',
+        'add_body' => '您也可以申请添加尚未列出的新赛事。',
+        'add_action' => '添加比赛',
     ],
     'personal_participation' => [
         'title' => '添加您的参赛历史',
@@ -30,7 +30,7 @@ return [
     ],
     'donate' => [
         'title' => '支持托管与开发',
-        'body' => '捐赠有助于覆盖基础设施、数据工具的开销，并支持持续维护赛事记录以服务社区所需的时间投入。',
+        'body' => '捐款将用于支付基础设施费用和维护赛事记录所需的时间，以确保它们能持续为社区提供有用的信息。',
         'kofi' => '在 Ko-Fi 上捐赠',
         'paypal' => '使用 PayPal 捐赠',
         'bank_label' => '银行转账',
