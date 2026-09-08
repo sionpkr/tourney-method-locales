@@ -4,20 +4,25 @@ declare(strict_types=1);
 
 $root = dirname(__DIR__);
 $policy = require $root.'/config/public-locales.php';
+$sourceOnly = in_array('--source-only', $argv, true);
 $errors = [];
 $locales = [];
-foreach (scandir($root.'/lang') ?: [] as $entry) {
-    if ($entry === '.' || $entry === '..' || ! is_dir($root.'/lang/'.$entry)) {
-        continue;
-    }
-    if (preg_match('/^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$/D', $entry) !== 1) {
-        $errors[] = "Invalid locale directory: lang/{$entry}";
+if ($sourceOnly) {
+    $locales = ['en'];
+} else {
+    foreach (scandir($root.'/lang') ?: [] as $entry) {
+        if ($entry === '.' || $entry === '..' || ! is_dir($root.'/lang/'.$entry)) {
+            continue;
+        }
+        if (preg_match('/^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$/D', $entry) !== 1) {
+            $errors[] = "Invalid locale directory: lang/{$entry}";
 
-        continue;
+            continue;
+        }
+        $locales[] = $entry;
     }
-    $locales[] = $entry;
+    sort($locales);
 }
-sort($locales);
 if (! in_array('en', $locales, true)) {
     $errors[] = 'Missing source locale directory: lang/en';
 }
@@ -56,6 +61,9 @@ foreach ($iterator as $candidate) {
         continue;
     }
     $relative = str_replace('\\', '/', substr($candidate->getPathname(), strlen($root.'/lang') + 1));
+    if ($sourceOnly && ! str_starts_with($relative, 'en/')) {
+        continue;
+    }
     if (! isset($expectedPaths[$relative])) {
         $errors[] = "Unexpected public locale file: lang/{$relative}";
     }
@@ -150,4 +158,4 @@ if ($errors !== []) {
     fwrite(STDERR, "Locale validation failed:\n - ".implode("\n - ", $errors)."\n");
     exit(1);
 }
-fwrite(STDOUT, "Locale validation passed.\n");
+fwrite(STDOUT, $sourceOnly ? "English source validation passed.\n" : "Locale validation passed.\n");

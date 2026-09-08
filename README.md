@@ -8,15 +8,17 @@ unreleased strings are not published here.
 
 ## Languages
 
-English (`en`) is the source language. Every complete target language exported
-by [Crowdin](https://crowdin.com/project/tourney-method) is validated and kept
-in this repository using its BCP 47 locale code.
+English (`en`) is the source language. Its approved public snapshot is exported
+from the private application by automation. Every complete target language
+exported by [Crowdin](https://crowdin.com/project/tourney-method) is validated
+and kept in this repository using its BCP 47 locale code.
 
 ## Contributing
 
 The preferred translation interface is
 [Crowdin](https://crowdin.com/project/tourney-method). Pull requests are also
-welcome for English source changes and translation corrections.
+welcome for translation corrections. English source changes originate in the
+private application and are mirrored here automatically.
 
 Please preserve Laravel placeholders such as `:name`, `:count`, and `:id`
 exactly. Run the validator before opening a pull request:
