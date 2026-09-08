@@ -38,8 +38,41 @@ jobs:
             exit 1
           fi
 
+      - name: Verify private repository credential
+        env:
+          PRIVATE_REPO_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
+        run: |
+          if [[ -z "$PRIVATE_REPO_TOKEN" ]]; then
+            echo "::error::Configure PRIVATE_REPO_TOKEN as a repository Actions secret."
+            exit 1
+          fi
+
+      - name: Check out private application
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          repository: sionpkr/tourney-method-private
+          ref: master
+          path: _private
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+          persist-credentials: false
+
+      - name: Export approved private English sources
+        run: php _private/tools/export-public-source.php . _private
+
+      - name: Validate English sources before upload
+        run: php tools/validate-locales.php --source-only
+
+      - name: Detect English source changes
+        id: sources
+        run: |
+          changed=false
+          if git status --porcelain -- lang/en | grep -q .; then
+            changed=true
+          fi
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
+
       - name: Upload changed English sources to Crowdin
-        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch' || steps.sources.outputs.changed == 'true'
         uses: crowdin/github-action@0d5670f539973aea2f01abce61a8989934df0025
         with:
           upload_sources: true
@@ -105,26 +138,6 @@ jobs:
         if: steps.changes.outputs.propagate == 'true'
         id: public
         run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-
-      - name: Verify private repository credential
-        if: steps.changes.outputs.propagate == 'true'
-        env:
-          PRIVATE_REPO_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
-        run: |
-          if [[ -z "$PRIVATE_REPO_TOKEN" ]]; then
-            echo "::error::Configure PRIVATE_REPO_TOKEN as a repository Actions secret."
-            exit 1
-          fi
-
-      - name: Check out private application
-        if: steps.changes.outputs.propagate == 'true'
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
-        with:
-          repository: sionpkr/tourney-method-private
-          ref: master
-          path: _private
-          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
-          persist-credentials: false
 
       - name: Import public locales into private application
         if: steps.changes.outputs.propagate == 'true'
