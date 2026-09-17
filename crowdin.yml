@@ -6,6 +6,3 @@ preserve_hierarchy: false
 files:
   - source: lang/en/*.php
     translation: lang/%locale%/%original_file_name%
-    languages_mapping:
-      locale:
-        sr-SP: sr-RS
