@@ -55,7 +55,11 @@ foreach (glob($root.'/lang/*', GLOB_ONLYDIR) ?: [] as $directory) {
     if ($locale === 'en') continue;
     $override = $overrides[$locale] ?? [];
     $expectedLocale = $override['canonical_locale'] ?? $locale;
-    $language = array_values(array_filter($languages, fn (array $language): bool => ($aliases[$language['locale']] ?? $language['locale']) === $locale));
+    $language = array_values(array_filter(
+        $languages,
+        fn (array $language): bool => ($aliases[$language['locale']] ?? $language['locale']) === $locale
+            || $language['locale'] === $expectedLocale,
+    ));
     $language = $language[0] ?? null;
     $progress = is_array($language) ? ($progressById[$language['id']] ?? null) : null;
     $translation = $progress['translationProgress'] ?? null;

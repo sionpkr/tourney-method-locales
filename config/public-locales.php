@@ -33,8 +33,8 @@ return [
     'locale_overrides' => [
         'en' => ['native_name' => 'English', 'flag_country' => 'us'],
         'es' => ['flag_country' => 'es'],
-        'ko' => ['flag_country' => 'kr'],
-        'ru' => ['flag_country' => 'ru'],
+        'ko' => ['canonical_locale' => 'ko-KR', 'native_name' => '한국어', 'flag_country' => 'kr'],
+        'ru' => ['canonical_locale' => 'ru-RU', 'native_name' => 'русский', 'flag_country' => 'ru'],
         'sr-SP' => ['canonical_locale' => 'sr-RS', 'native_name' => 'Српски', 'flag_country' => 'rs'],
     ],
 ];
