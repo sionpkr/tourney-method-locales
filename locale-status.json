@@ -1,34 +1,179 @@
 {
     "version": 1,
     "locales": {
-        "af-ZA": { "translation_progress": 0, "approval_progress": 0, "native_name": "Afrikaans (Suid-Afrika)", "flag_country": "za" },
-        "ar-SA": { "translation_progress": 0, "approval_progress": 0, "native_name": "العربية (المملكة العربية السعودية)", "flag_country": "sa" },
-        "ca-ES": { "translation_progress": 0, "approval_progress": 0, "native_name": "català (Espanya)", "flag_country": "es" },
-        "cs-CZ": { "translation_progress": 0, "approval_progress": 0, "native_name": "čeština (Česko)", "flag_country": "cz" },
-        "da-DK": { "translation_progress": 0, "approval_progress": 0, "native_name": "dansk (Danmark)", "flag_country": "dk" },
-        "de-DE": { "translation_progress": 0, "approval_progress": 0, "native_name": "Deutsch (Deutschland)", "flag_country": "de" },
-        "el-GR": { "translation_progress": 0, "approval_progress": 0, "native_name": "Ελληνικά (Ελλάδα)", "flag_country": "gr" },
-        "es": { "translation_progress": 0, "approval_progress": 0, "native_name": "español", "flag_country": "es" },
-        "fi-FI": { "translation_progress": 0, "approval_progress": 0, "native_name": "suomi (Suomi)", "flag_country": "fi" },
-        "fr-FR": { "translation_progress": 0, "approval_progress": 0, "native_name": "français (France)", "flag_country": "fr" },
-        "he-IL": { "translation_progress": 0, "approval_progress": 0, "native_name": "עברית (ישראל)", "flag_country": "il" },
-        "hu-HU": { "translation_progress": 0, "approval_progress": 0, "native_name": "magyar (Magyarország)", "flag_country": "hu" },
-        "it-IT": { "translation_progress": 0, "approval_progress": 0, "native_name": "italiano (Italia)", "flag_country": "it" },
-        "ja-JP": { "translation_progress": 0, "approval_progress": 0, "native_name": "日本語 (日本)", "flag_country": "jp" },
-        "ko": { "translation_progress": 0, "approval_progress": 0, "native_name": "한국어", "flag_country": "kr" },
-        "nl-NL": { "translation_progress": 0, "approval_progress": 0, "native_name": "Nederlands (Nederland)", "flag_country": "nl" },
-        "no-NO": { "translation_progress": 0, "approval_progress": 0, "native_name": "norsk (Norge)", "flag_country": "no" },
-        "pl-PL": { "translation_progress": 0, "approval_progress": 0, "native_name": "polski (Polska)", "flag_country": "pl" },
-        "pt-BR": { "translation_progress": 0, "approval_progress": 0, "native_name": "português (Brasil)", "flag_country": "br" },
-        "pt-PT": { "translation_progress": 0, "approval_progress": 0, "native_name": "português europeu", "flag_country": "pt" },
-        "ro-RO": { "translation_progress": 0, "approval_progress": 0, "native_name": "română (România)", "flag_country": "ro" },
-        "ru": { "translation_progress": 0, "approval_progress": 0, "native_name": "русский", "flag_country": "ru" },
-        "sr-SP": { "translation_progress": 0, "approval_progress": 0, "native_name": "српски (Србија)", "flag_country": "rs" },
-        "sv-SE": { "translation_progress": 0, "approval_progress": 0, "native_name": "svenska (Sverige)", "flag_country": "se" },
-        "tr-TR": { "translation_progress": 0, "approval_progress": 0, "native_name": "Türkçe (Türkiye)", "flag_country": "tr" },
-        "uk-UA": { "translation_progress": 0, "approval_progress": 0, "native_name": "українська (Україна)", "flag_country": "ua" },
-        "vi-VN": { "translation_progress": 0, "approval_progress": 0, "native_name": "Tiếng Việt (Việt Nam)", "flag_country": "vn" },
-        "zh-CN": { "translation_progress": 0, "approval_progress": 0, "native_name": "中文（中国）", "flag_country": "cn" },
-        "zh-TW": { "translation_progress": 0, "approval_progress": 0, "native_name": "中文（台灣）", "flag_country": "tw" }
+        "af-ZA": {
+            "translation_progress": 0,
+            "approval_progress": 0,
+            "native_name": "Afrikaans (Suid-Afrika)",
+            "flag_country": "za"
+        },
+        "ar-SA": {
+            "translation_progress": 0,
+            "approval_progress": 0,
+            "native_name": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629 (\u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629)",
+            "flag_country": "sa"
+        },
+        "ca-ES": {
+            "translation_progress": 0,
+            "approval_progress": 0,
+            "native_name": "catal\u00e0 (Espanya)",
+            "flag_country": "es"
+        },
+        "cs-CZ": {
+            "translation_progress": 0,
+            "approval_progress": 0,
+            "native_name": "\u010de\u0161tina (\u010cesko)",
+            "flag_country": "cz"
+        },
+        "da-DK": {
+            "translation_progress": 0,
+            "approval_progress": 0,
+            "native_name": "dansk (Danmark)",
+            "flag_country": "dk"
+        },
+        "de-DE": {
+            "translation_progress": 0,
+            "approval_progress": 0,
+            "native_name": "Deutsch (Deutschland)",
+            "flag_country": "de"
+        },
+        "el-GR": {
+            "translation_progress": 0,
+            "approval_progress": 0,
+            "native_name": "\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac (\u0395\u03bb\u03bb\u03ac\u03b4\u03b1)",
+            "flag_country": "gr"
+        },
+        "es": {
+            "translation_progress": 34,
+            "approval_progress": 0,
+            "native_name": "espa\u00f1ol",
+            "flag_country": "es"
+        },
+        "fi-FI": {
+            "translation_progress": 0,
+            "approval_progress": 0,
+            "native_name": "suomi (Suomi)",
+            "flag_country": "fi"
+        },
+        "fr-FR": {
+            "translation_progress": 0,
+            "approval_progress": 0,
+            "native_name": "fran\u00e7ais (France)",
+            "flag_country": "fr"
+        },
+        "he-IL": {
+            "translation_progress": 0,
+            "approval_progress": 0,
+            "native_name": "\u05e2\u05d1\u05e8\u05d9\u05ea (\u05d9\u05e9\u05e8\u05d0\u05dc)",
+            "flag_country": "il"
+        },
+        "hu-HU": {
+            "translation_progress": 0,
+            "approval_progress": 0,
+            "native_name": "magyar (Magyarorsz\u00e1g)",
+            "flag_country": "hu"
+        },
+        "it-IT": {
+            "translation_progress": 0,
+            "approval_progress": 0,
+            "native_name": "italiano (Italia)",
+            "flag_country": "it"
+        },
+        "ja-JP": {
+            "translation_progress": 0,
+            "approval_progress": 0,
+            "native_name": "\u65e5\u672c\u8a9e (\u65e5\u672c)",
+            "flag_country": "jp"
+        },
+        "ko": {
+            "translation_progress": 63,
+            "approval_progress": 6,
+            "native_name": "\ud55c\uad6d\uc5b4",
+            "flag_country": "kr"
+        },
+        "nl-NL": {
+            "translation_progress": 0,
+            "approval_progress": 0,
+            "native_name": "Nederlands (Nederland)",
+            "flag_country": "nl"
+        },
+        "no-NO": {
+            "translation_progress": 0,
+            "approval_progress": 0,
+            "native_name": "norsk (Norge)",
+            "flag_country": "no"
+        },
+        "pl-PL": {
+            "translation_progress": 0,
+            "approval_progress": 0,
+            "native_name": "polski (Polska)",
+            "flag_country": "pl"
+        },
+        "pt-BR": {
+            "translation_progress": 0,
+            "approval_progress": 0,
+            "native_name": "portugu\u00eas (Brasil)",
+            "flag_country": "br"
+        },
+        "pt-PT": {
+            "translation_progress": 0,
+            "approval_progress": 0,
+            "native_name": "portugu\u00eas (Portugal)",
+            "flag_country": "pt"
+        },
+        "ro-RO": {
+            "translation_progress": 11,
+            "approval_progress": 0,
+            "native_name": "rom\u00e2n\u0103 (Rom\u00e2nia)",
+            "flag_country": "ro"
+        },
+        "ru": {
+            "translation_progress": 98,
+            "approval_progress": 98,
+            "native_name": "\u0440\u0443\u0441\u0441\u043a\u0438\u0439",
+            "flag_country": "ru"
+        },
+        "sr-SP": {
+            "translation_progress": 0,
+            "approval_progress": 0,
+            "native_name": "\u0421\u0440\u043f\u0441\u043a\u0438",
+            "flag_country": "rs"
+        },
+        "sv-SE": {
+            "translation_progress": 1,
+            "approval_progress": 0,
+            "native_name": "svenska (Sverige)",
+            "flag_country": "se"
+        },
+        "tr-TR": {
+            "translation_progress": 0,
+            "approval_progress": 0,
+            "native_name": "T\u00fcrk\u00e7e (T\u00fcrkiye)",
+            "flag_country": "tr"
+        },
+        "uk-UA": {
+            "translation_progress": 0,
+            "approval_progress": 0,
+            "native_name": "\u0443\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430 (\u0423\u043a\u0440\u0430\u0457\u043d\u0430)",
+            "flag_country": "ua"
+        },
+        "vi-VN": {
+            "translation_progress": 0,
+            "approval_progress": 0,
+            "native_name": "Ti\u1ebfng Vi\u1ec7t (Vi\u1ec7t Nam)",
+            "flag_country": "vn"
+        },
+        "zh-CN": {
+            "translation_progress": 98,
+            "approval_progress": 0,
+            "native_name": "\u4e2d\u6587\uff08\u4e2d\u56fd\uff09",
+            "flag_country": "cn"
+        },
+        "zh-TW": {
+            "translation_progress": 22,
+            "approval_progress": 0,
+            "native_name": "\u4e2d\u6587\uff08\u53f0\u7063\uff09",
+            "flag_country": "tw"
+        }
     }
 }
