@@ -55,7 +55,7 @@ foreach ($progressById as $languageId => $progress) {
         exit(1);
     }
 
-    $locale = $language['locale'];
+    $locale = canonicalCrowdinLocale($language['locale']);
     if (isset($projectLanguagesByLocale[$locale])) {
         fwrite(STDERR, "Crowdin project has duplicate target locale {$locale}.\n");
         exit(1);
@@ -141,4 +141,12 @@ function validFlagCountry(mixed $country): bool
     $name = Locale::getDisplayRegion('und-'.strtoupper($country), 'en');
 
     return $name !== '' && strcasecmp($name, $country) !== 0 && $name !== 'Unknown Region';
+}
+
+function canonicalCrowdinLocale(string $locale): string
+{
+    // Crowdin's Serbian target language is still identified as sr-SP. This
+    // normalization is deliberately confined to the provider adapter; every
+    // application-facing locale remains canonical BCP 47.
+    return $locale === 'sr-SP' ? 'sr-RS' : $locale;
 }
