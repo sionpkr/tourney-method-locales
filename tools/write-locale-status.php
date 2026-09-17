@@ -34,8 +34,6 @@ try {
     exit(1);
 }
 
-$aliases = $policy['crowdin_locale_aliases'] ?? [];
-$overrides = $policy['locale_overrides'] ?? [];
 $languages = [];
 foreach ($languagesPayload['data'] ?? [] as $entry) {
     $language = $entry['data'] ?? null;
@@ -49,32 +47,62 @@ foreach ($progressPayload['data'] ?? [] as $entry) {
         $progressById[$entry['data']['languageId']] = $entry['data'];
     }
 }
-$locales = [];
+$languagesByLocale = [];
+foreach ($languages as $language) {
+    $locale = $language['locale'];
+    if (isset($languagesByLocale[$locale])) {
+        fwrite(STDERR, "Crowdin returned duplicate language locale {$locale}.\n");
+        exit(1);
+    }
+    $languagesByLocale[$locale] = $language;
+}
+
+$resolved = [];
 foreach (glob($root.'/lang/*', GLOB_ONLYDIR) ?: [] as $directory) {
     $locale = basename($directory);
-    if ($locale === 'en') continue;
-    $override = $overrides[$locale] ?? [];
-    $expectedLocale = $override['canonical_locale'] ?? $locale;
-    $language = array_values(array_filter(
-        $languages,
-        fn (array $language): bool => ($aliases[$language['locale']] ?? $language['locale']) === $locale
-            || $language['locale'] === $expectedLocale,
-    ));
-    $language = $language[0] ?? null;
+    if ($locale === 'en') {
+        continue;
+    }
+
+    $language = $languagesByLocale[$locale] ?? null;
     $progress = is_array($language) ? ($progressById[$language['id']] ?? null) : null;
     $translation = $progress['translationProgress'] ?? null;
     $approval = $progress['approvalProgress'] ?? null;
-    $nativeName = $override['native_name'] ?? (class_exists(Locale::class) ? Locale::getDisplayName($expectedLocale, $expectedLocale) : '');
-    $flagCountry = $override['flag_country'] ?? (class_exists(Locale::class) ? strtolower(Locale::getRegion($expectedLocale)) : '');
-    if (! is_array($progress) || ! is_numeric($translation) || ! is_numeric($approval) || ! is_string($nativeName) || $nativeName === '' || ! validFlagCountry($flagCountry)) {
+    if (! is_array($progress) || ! is_numeric($translation) || ! is_numeric($approval)) {
         $languageId = is_array($language) ? (string) ($language['id'] ?? 'unknown') : 'not-found';
         $progressId = is_array($progress) ? (string) ($progress['languageId'] ?? 'unknown') : 'not-found';
         fwrite(STDERR, "Missing valid Crowdin metadata for {$locale} (language={$languageId}, progress={$progressId}).\n");
         exit(1);
     }
+
+    $resolved[$locale] = [
+        'language' => $language,
+        'translation' => (float) $translation,
+        'approval' => (float) $approval,
+    ];
+}
+
+$primaryCounts = [];
+foreach ($resolved as $locale => $entry) {
+    $primary = Locale::getPrimaryLanguage($locale);
+    $primaryCounts[$primary] = ($primaryCounts[$primary] ?? 0) + 1;
+}
+
+$locales = [];
+foreach ($resolved as $locale => $entry) {
+    $primary = Locale::getPrimaryLanguage($locale);
+    $nativeName = $primaryCounts[$primary] > 1
+        ? Locale::getDisplayName($locale, $locale)
+        : Locale::getDisplayLanguage($locale, $locale);
+    $flagCountry = strtolower(Locale::getRegion($locale));
+    if (! is_string($nativeName) || $nativeName === '' || ! validFlagCountry($flagCountry)) {
+        fwrite(STDERR, "Unable to derive presentation metadata for {$locale}.\n");
+        exit(1);
+    }
+
     $locales[$locale] = [
-        'translation_progress' => (float) $translation,
-        'approval_progress' => (float) $approval,
+        'translation_progress' => $entry['translation'],
+        'approval_progress' => $entry['approval'],
         'native_name' => $nativeName,
         'flag_country' => $flagCountry,
     ];

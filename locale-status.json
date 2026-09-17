@@ -43,7 +43,7 @@
             "native_name": "\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac (\u0395\u03bb\u03bb\u03ac\u03b4\u03b1)",
             "flag_country": "gr"
         },
-        "es": {
+        "es-ES": {
             "translation_progress": 34,
             "approval_progress": 0,
             "native_name": "espa\u00f1ol",
@@ -85,7 +85,7 @@
             "native_name": "\u65e5\u672c\u8a9e (\u65e5\u672c)",
             "flag_country": "jp"
         },
-        "ko": {
+        "ko-KR": {
             "translation_progress": 63,
             "approval_progress": 6,
             "native_name": "\ud55c\uad6d\uc5b4",
@@ -127,13 +127,13 @@
             "native_name": "rom\u00e2n\u0103 (Rom\u00e2nia)",
             "flag_country": "ro"
         },
-        "ru": {
+        "ru-RU": {
             "translation_progress": 98,
             "approval_progress": 98,
             "native_name": "\u0440\u0443\u0441\u0441\u043a\u0438\u0439",
             "flag_country": "ru"
         },
-        "sr-SP": {
+        "sr-RS": {
             "translation_progress": 0,
             "approval_progress": 0,
             "native_name": "\u0421\u0440\u043f\u0441\u043a\u0438",
