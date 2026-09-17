@@ -12,6 +12,19 @@ English sources before all current translations are downloaded. The workflow
 fills missing, empty, or placeholder-incompatible values from English so every
 locale remains structurally complete.
 
+After download, the workflow records Crowdin's translation and approval progress
+in `locale-status.json` before validation and import. This preserves real
+completion data even when untranslated strings are normalized to English.
+The initial tracked manifest is deliberately conservative (0% for every target
+locale) until this trusted workflow first replaces it with Crowdin data.
+
+To inspect the live API result without changing files, run this from a shell
+that has the two Crowdin variables set:
+
+```bash
+php tools/write-locale-status.php --dry-run
+```
+
 The workflow validates every exported locale before committing changes to
 `main`. After the public revision is current, it imports the locale snapshot
 into `sionpkr/tourney-method-private` and opens or refreshes the private

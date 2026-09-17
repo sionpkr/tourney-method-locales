@@ -13,6 +13,13 @@ from the private application by automation. Every complete target language
 exported by [Crowdin](https://crowdin.com/project/tourney-method) is validated
 and kept in this repository using its BCP 47 locale code.
 
+`locale-status.json` records Crowdin's translation and approval progress for
+the exported snapshot. The private application uses translation progress to
+show non-English locales in production only after they reach its 20% cutline.
+The tracked bootstrap manifest deliberately assigns 0% until the first trusted
+Crowdin synchronization replaces it; this keeps production fail-closed rather
+than exposing untranslated locales.
+
 ## Contributing
 
 The preferred translation interface is

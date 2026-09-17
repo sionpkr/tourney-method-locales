@@ -27,6 +27,40 @@ if (! in_array('en', $locales, true)) {
     $errors[] = 'Missing source locale directory: lang/en';
 }
 $locales = ['en', ...array_values(array_diff($locales, ['en']))];
+
+if (! $sourceOnly) {
+    $statusPath = $root.'/locale-status.json';
+    if (! is_file($statusPath)) {
+        $errors[] = 'Missing locale status manifest: locale-status.json';
+    } else {
+        try {
+            $statusManifest = json_decode((string) file_get_contents($statusPath), true, flags: JSON_THROW_ON_ERROR);
+        } catch (JsonException $exception) {
+            $errors[] = 'Invalid locale status manifest: '.$exception->getMessage();
+            $statusManifest = null;
+        }
+
+        if (! is_array($statusManifest) || ($statusManifest['version'] ?? null) !== 1 || ! is_array($statusManifest['locales'] ?? null)) {
+            $errors[] = 'Locale status manifest must contain version 1 and a locales object.';
+        } else {
+            $expectedStatusLocales = array_values(array_diff($locales, ['en']));
+            if (array_keys($statusManifest['locales']) !== $expectedStatusLocales) {
+                $errors[] = 'Locale status manifest must contain exactly every non-English locale.';
+            }
+            foreach ($statusManifest['locales'] as $locale => $progress) {
+                if (! is_string($locale) || ! in_array($locale, $locales, true) || ! is_array($progress)
+                    || ! is_numeric($progress['translation_progress'] ?? null)
+                    || ! is_numeric($progress['approval_progress'] ?? null)
+                    || ! is_string($progress['native_name'] ?? null) || $progress['native_name'] === ''
+                    || ! validFlagCountry($progress['flag_country'] ?? null)
+                    || $progress['translation_progress'] < 0 || $progress['translation_progress'] > 100
+                    || $progress['approval_progress'] < 0 || $progress['approval_progress'] > 100) {
+                    $errors[] = "Invalid locale status entry: {$locale}";
+                }
+            }
+        }
+    }
+}
 $flatten = function (array $values, string $prefix = '') use (&$flatten): array {
     $result = [];
     foreach ($values as $key => $value) {
@@ -159,3 +193,14 @@ if ($errors !== []) {
     exit(1);
 }
 fwrite(STDOUT, $sourceOnly ? "English source validation passed.\n" : "Locale validation passed.\n");
+
+function validFlagCountry(mixed $country): bool
+{
+    if (! is_string($country) || preg_match('/^[a-z]{2}$/', $country) !== 1 || ! class_exists(Locale::class)) {
+        return false;
+    }
+
+    $name = Locale::getDisplayRegion('und-'.strtoupper($country), 'en');
+
+    return $name !== '' && strcasecmp($name, $country) !== 0 && $name !== 'Unknown Region';
+}

@@ -27,4 +27,14 @@ return [
     ],
     'forbidden_phrases' => [
     ],
+    'crowdin_locale_aliases' => [
+        'es-ES' => 'es',
+    ],
+    'locale_overrides' => [
+        'en' => ['native_name' => 'English', 'flag_country' => 'us'],
+        'es' => ['flag_country' => 'es'],
+        'ko' => ['flag_country' => 'kr'],
+        'ru' => ['flag_country' => 'ru'],
+        'sr-SP' => ['canonical_locale' => 'sr-RS', 'native_name' => 'Српски', 'flag_country' => 'rs'],
+    ],
 ];
