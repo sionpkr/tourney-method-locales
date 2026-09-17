@@ -47,14 +47,20 @@ foreach ($progressPayload['data'] ?? [] as $entry) {
         $progressById[$entry['data']['languageId']] = $entry['data'];
     }
 }
-$languagesByLocale = [];
-foreach ($languages as $language) {
-    $locale = $language['locale'];
-    if (isset($languagesByLocale[$locale])) {
-        fwrite(STDERR, "Crowdin returned duplicate language locale {$locale}.\n");
+$projectLanguagesByLocale = [];
+foreach ($progressById as $languageId => $progress) {
+    $language = $languages[$languageId] ?? null;
+    if (! is_array($language)) {
+        fwrite(STDERR, "Crowdin progress references unknown language {$languageId}.\n");
         exit(1);
     }
-    $languagesByLocale[$locale] = $language;
+
+    $locale = $language['locale'];
+    if (isset($projectLanguagesByLocale[$locale])) {
+        fwrite(STDERR, "Crowdin project has duplicate target locale {$locale}.\n");
+        exit(1);
+    }
+    $projectLanguagesByLocale[$locale] = $language;
 }
 
 $resolved = [];
@@ -64,7 +70,7 @@ foreach (glob($root.'/lang/*', GLOB_ONLYDIR) ?: [] as $directory) {
         continue;
     }
 
-    $language = $languagesByLocale[$locale] ?? null;
+    $language = $projectLanguagesByLocale[$locale] ?? null;
     $progress = is_array($language) ? ($progressById[$language['id']] ?? null) : null;
     $translation = $progress['translationProgress'] ?? null;
     $approval = $progress['approvalProgress'] ?? null;
