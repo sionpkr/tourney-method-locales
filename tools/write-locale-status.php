@@ -63,7 +63,9 @@ foreach (glob($root.'/lang/*', GLOB_ONLYDIR) ?: [] as $directory) {
     $nativeName = $override['native_name'] ?? (class_exists(Locale::class) ? Locale::getDisplayName($expectedLocale, $expectedLocale) : '');
     $flagCountry = $override['flag_country'] ?? (class_exists(Locale::class) ? strtolower(Locale::getRegion($expectedLocale)) : '');
     if (! is_array($progress) || ! is_numeric($translation) || ! is_numeric($approval) || ! is_string($nativeName) || $nativeName === '' || ! validFlagCountry($flagCountry)) {
-        fwrite(STDERR, "Missing valid Crowdin metadata for {$locale}.\n");
+        $languageId = is_array($language) ? (string) ($language['id'] ?? 'unknown') : 'not-found';
+        $progressId = is_array($progress) ? (string) ($progress['languageId'] ?? 'unknown') : 'not-found';
+        fwrite(STDERR, "Missing valid Crowdin metadata for {$locale} (language={$languageId}, progress={$progressId}).\n");
         exit(1);
     }
     $locales[$locale] = [
