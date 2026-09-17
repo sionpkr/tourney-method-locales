@@ -77,7 +77,7 @@ foreach (glob($root.'/lang/*', GLOB_ONLYDIR) ?: [] as $directory) {
     if (! is_array($progress) || ! is_numeric($translation) || ! is_numeric($approval)) {
         $languageId = is_array($language) ? (string) ($language['id'] ?? 'unknown') : 'not-found';
         $progressId = is_array($progress) ? (string) ($progress['languageId'] ?? 'unknown') : 'not-found';
-        fwrite(STDERR, "Missing valid Crowdin metadata for {$locale} (language={$languageId}, progress={$progressId}).\n");
+        fwrite(STDERR, "Missing valid Crowdin metadata for {$locale} (language={$languageId}, progress={$progressId}; project targets=".implode(', ', array_keys($projectLanguagesByLocale)).").\n");
         exit(1);
     }
 
