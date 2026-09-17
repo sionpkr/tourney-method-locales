@@ -5,6 +5,29 @@ declare(strict_types=1);
 $root = dirname(__DIR__);
 $policy = require $root.'/config/public-locales.php';
 
+foreach (['sr-SP' => 'sr-RS'] as $providerLocale => $canonicalLocale) {
+    $providerDirectory = "{$root}/lang/{$providerLocale}";
+    $canonicalDirectory = "{$root}/lang/{$canonicalLocale}";
+    if (! is_dir($providerDirectory)) {
+        continue;
+    }
+
+    if (! is_dir($canonicalDirectory) && ! mkdir($canonicalDirectory, 0777, true) && ! is_dir($canonicalDirectory)) {
+        throw new RuntimeException("Unable to create canonical locale directory: {$canonicalDirectory}");
+    }
+
+    foreach (glob($providerDirectory.'/*.php') ?: [] as $providerFile) {
+        $canonicalFile = $canonicalDirectory.'/'.basename($providerFile);
+        if (! rename($providerFile, $canonicalFile)) {
+            throw new RuntimeException("Unable to normalize Crowdin locale file: {$providerFile}");
+        }
+    }
+
+    if (! rmdir($providerDirectory)) {
+        throw new RuntimeException("Unable to remove Crowdin provider locale directory: {$providerDirectory}");
+    }
+}
+
 $placeholders = static function (string $value): array {
     preg_match_all('/(?<!:):([a-z_][A-Za-z0-9_]*)|\{([a-z_][A-Za-z0-9_]*)\}|%(?:\d+\$)?[bcdeEfFgGosuxX](?![A-Fa-f0-9])/', $value, $matches);
     $result = array_values(array_unique($matches[0]));
