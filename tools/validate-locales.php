@@ -52,7 +52,7 @@ if (! $sourceOnly) {
                     || ! is_numeric($progress['translation_progress'] ?? null)
                     || ! is_numeric($progress['approval_progress'] ?? null)
                     || ! is_string($progress['native_name'] ?? null) || $progress['native_name'] === ''
-                    || ! validFlagCountry($progress['flag_country'] ?? null)
+                    || ! validFlagCountryOrNull($progress['flag_country'] ?? null)
                     || $progress['translation_progress'] < 0 || $progress['translation_progress'] > 100
                     || $progress['approval_progress'] < 0 || $progress['approval_progress'] > 100) {
                     $errors[] = "Invalid locale status entry: {$locale}";
@@ -203,4 +203,9 @@ function validFlagCountry(mixed $country): bool
     $name = Locale::getDisplayRegion('und-'.strtoupper($country), 'en');
 
     return $name !== '' && strcasecmp($name, $country) !== 0 && $name !== 'Unknown Region';
+}
+
+function validFlagCountryOrNull(mixed $country): bool
+{
+    return $country === null || validFlagCountry($country);
 }

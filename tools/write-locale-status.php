@@ -101,7 +101,8 @@ foreach ($resolved as $locale => $entry) {
         ? Locale::getDisplayName($locale, $locale)
         : Locale::getDisplayLanguage($locale, $locale);
     $flagCountry = strtolower(Locale::getRegion($locale));
-    if (! is_string($nativeName) || $nativeName === '' || ! validFlagCountry($flagCountry)) {
+    $flagCountry = validFlagCountry($flagCountry) ? $flagCountry : null;
+    if (! is_string($nativeName) || $nativeName === '') {
         fwrite(STDERR, "Unable to derive presentation metadata for {$locale}.\n");
         exit(1);
     }
