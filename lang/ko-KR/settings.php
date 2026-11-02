@@ -4,7 +4,7 @@ return [
     'title' => '설정',
     'discord_webhook' => [
         'title' => '디스코드 웹훅',
-        'description' => '디스코드 서버에서 직접 알림을 받게 설정하세요.',
+        'channel_description' => 'Receive tournament notifications in a Discord server channel.',
         'webhook_url' => '웹훅 URL',
         'valid' => '유효한 URL입니다.',
         'invalid' => '유효하지 않은 URL입니다.',
@@ -12,8 +12,10 @@ return [
         'how_to_url' => 'https://support.discord.com/hc/ko/articles/228383668-%EC%9B%B9%ED%9B%84%ED%81%AC-%EC%86%8C%EA%B0%9C',
         'test_button' => '테스트 메시지 전송하기',
         'test_sending' => '전송 중...',
+        'test_requires_javascript' => 'Enable JavaScript to send a test message.',
         'test_success' => '테스트 메시지가 전송되었습니다! 디스코드를 확인해보세요.',
         'test_error' => '메시지 전송에 실패했습니다.',
+        'save_before_test' => 'Save your webhook URL before sending a test message.',
     ],
     'game_mode' => [
         'title' => '메인 게임모드',

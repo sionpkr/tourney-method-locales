@@ -3,34 +3,31 @@
 return [
     'title' => '贡献',
     'description' => '通过完善翻译、校正赛事信息、添加参赛记录和其他技术支持来帮助改进 Tourney Method。',
-    'hero' => [
-        'title' => '为 Tourney Method 做出贡献',
-        'body' => '当选手和工作人员分享他们信息时，Tourney Method 会变得更好。您可以协助进行翻译、完善赛事数据、更新工作人员名单、补充获奖记录以及完善相关链接。',
-    ],
+    'external_note' => 'Opens in a new tab',
     'translation' => [
         'title' => '翻译网站',
-        'body' => '在 Crowdin 上贡献翻译，帮助让 Tourney Method 更易于被更多赛事社区使用。',
+        'instructions' => 'Help translate the site through Crowdin.',
         'action' => '打开 Crowdin',
     ],
     'corrections' => [
         'title' => '校正赛事信息',
-        'body' => '如果比赛页面有缺少或不正确的信息，请使用比赛详情页面的校正表。',
-        'steps' => [
-            0 => '打开比赛详情页面。',
-            1 => '滚动到底部贡献部分。',
-            2 => '点击校正比赛，只需提交需要更改的部分。',
-        ],
-        'add_body' => '您也可以申请添加尚未列出的新赛事。',
-        'add_action' => '添加比赛',
+        'instructions' => 'Open a tournament\'s Contributions section to correct its information, staff, podiums or links.',
+        'action' => 'Browse tournaments',
+    ],
+    'new_tournament' => [
+        'title' => 'Add a missing tournament',
+        'instructions' => 'Submit a missing tournament for review.',
+        'action' => 'Add Tournament',
+        'guest_action' => 'Sign in to add a tournament',
     ],
     'personal_participation' => [
         'title' => '添加您的参赛历史',
-        'body' => '您个人的参赛历史有助于 Tourney Method 构建更丰富的数据：包括参赛队伍、最终结果、比赛链接，以及每位选手在历届比赛中的征战历程。',
+        'instructions' => 'Add your teams, final results and match links from your profile.',
         'action' => '打开您的主页',
+        'guest_action' => 'Sign in to view your profile',
     ],
     'donate' => [
         'title' => '支持托管与开发',
-        'body' => '捐款将用于支付基础设施费用和维护赛事记录所需的时间，以确保它们能持续为社区提供有用的信息。',
         'kofi' => '在 Ko-Fi 上捐赠',
         'paypal' => '使用 PayPal 捐赠',
         'bank_label' => '银行转账',

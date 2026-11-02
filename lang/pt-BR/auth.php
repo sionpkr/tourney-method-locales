@@ -6,5 +6,6 @@ return [
         'select_mode' => 'Select Your Main Mode',
         'info' => 'You can change this later',
         'submit' => 'Finalizar configuração',
+        'submitting' => 'Completing setup...',
     ],
 ];

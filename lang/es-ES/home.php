@@ -2,58 +2,36 @@
 
 return [
     'hero' => [
-        'title' => 'Tourney Method',
-        'subtitle' => 'Descubre torneos de osu!, sigue las participaciones y ayuda a mejorar los datos de los torneos',
+        'title' => 'Find your next osu! tournament',
+        'subtitle' => 'Browse tournaments by mode and entry requirements. Keep a record of the events you play.',
     ],
-    'guest_actions' => [
-        'browse_tournaments' => 'Ver Torneos',
-        'browse_tournaments_desc' => 'Explora torneos desde los foros de osu!',
-        'login_to_search' => 'Inicia sesión para Buscar y Filtrar',
-        'login_to_search_desc' => 'Buscar usuarios y comprobar torneos elegibles',
+    'actions' => [
+        'browse' => 'Browse Tournaments',
+        'login' => 'Sign in to check eligibility',
+        'participation' => 'My participation',
+        'public_search' => 'Tournament search is public. Sign in for eligibility checks and tournament alerts.',
     ],
-    'auth_actions' => [
-        'browse_tournaments' => 'Ver Torneos',
-        'browse_tournaments_desc' => 'Explorar y filtrar torneos',
-        'already_logged_in' => 'Ya estás conectado',
-        'already_logged_in_desc' => 'Utilizar la búsqueda y los filtros en la navegación',
+    'featured' => [
+        'title' => 'Upcoming registration deadlines',
+        'empty' => 'No upcoming registration dates are listed. Browse all tournaments.',
     ],
     'sections' => [
-        'tournament_discovery' => [
-            'title' => 'Descubrimiento de Torneos',
-            'content' => 'La lista de torneos está automáticamente actualizada desde las fuentes de torneos de osu!. Filtra por modo de juego, estado de registros, requerimientos de rangos, región y formato para encontrar torneos en los que puedas participar.',
-        ],
-        'tournament_history' => [
-            'title' => 'Historial de torneos',
-            'content' => 'Cada página de torneo muestra fechas, elegibilidad, enlaces, staff, resultados de podio y correcciones de la comunidad. Si algo está mal, desplácese hasta la parte inferior y use Corregir Torneo.',
-        ],
-        'user_profiles' => [
-            'title' => 'Perfiles de Usuario',
-            'content' => 'Tu perfil de usuario mantiene registros de participación personal, podios, compañeros de equipo, historial de personal, insignias e historial de contribuciones en un solo lugar.',
-        ],
         'how_to_use' => [
             'title' => 'Cómo usar Tourney Method',
             'items' => [
-                0 => [
-                    'title' => 'Encuentra torneos',
-                    'body' => 'Utilice filtros de torneo y comandos de búsqueda para comparar el estado de registros, rangos de rango, modos, regiones y formatos.',
+                'registration' => [
+                    'title' => 'Registration alerts',
+                    'body' => 'Signed-in users can receive alerts for eligible tournaments when registration opens or closes within 24 hours.',
                 ],
-                1 => [
-                    'title' => 'Ver registro',
-                    'body' => 'Cuando veas torneos, las notificaciones en la aplicación pueden avisarte cuando el registro se abra o cierre dentro de 24 horas.',
+                'participation' => [
+                    'title' => 'Participation records',
+                    'body' => 'Open your profile and add participation records for tournaments you played, including stage reached, placement, teammates, and match links.',
                 ],
-                2 => [
-                    'title' => 'Sigue tu historial',
-                    'body' => 'Abre tu perfil y añade registros de participación para torneos que hayas jugado, incluyendo etapa alcanzada, clasificación, compañeros de equipo y enlaces de partida.',
-                ],
-                3 => [
-                    'title' => 'Mejorar los datos',
-                    'body' => 'Abre una página de detalles del torneo, desplázate en Contribuciones y envía correciones para metadatos, staff, podios o enlaces.',
+                'corrections' => [
+                    'title' => 'Tournament corrections',
+                    'body' => 'Open a tournament detail page, scroll to Contributions, and submit corrections for metadata, staff, podiums, or links.',
                 ],
             ],
-        ],
-        'eligibility_checking' => [
-            'title' => 'Comprobación de elegibilidad',
-            'content' => 'Algunos torneos utilizan el sistema Badge Weighted Seeding (BWS) para determinar la elegibilidad. Este sistema admite formatos BWS estándar y personalizados, incluyendo métodos que excluyen insignias antiguas (ejemplo: las insignias ganadas antes de 2022 están excluidas del cálculo), permitiéndote ver para qué torneos eres elegible actualmente basándose en varios métodos de cálculo de BWS.',
         ],
         'data_sources' => [
             'title' => 'Fuentes de datos',

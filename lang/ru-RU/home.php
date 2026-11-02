@@ -2,58 +2,36 @@
 
 return [
     'hero' => [
-        'title' => 'Tourney Method',
-        'subtitle' => 'Находите турниры osu!, отслеживайте участия игроков и помогайте улучшать данные о турнирах',
+        'title' => 'Find your next osu! tournament',
+        'subtitle' => 'Browse tournaments by mode and entry requirements. Keep a record of the events you play.',
     ],
-    'guest_actions' => [
-        'browse_tournaments' => 'Все Турниры',
-        'browse_tournaments_desc' => 'Исследуйте турниры с osu! форумов',
-        'login_to_search' => 'Войдите для поиска',
-        'login_to_search_desc' => 'Поиск пользователей и подходящих турниров',
+    'actions' => [
+        'browse' => 'Browse Tournaments',
+        'login' => 'Sign in to check eligibility',
+        'participation' => 'My participation',
+        'public_search' => 'Tournament search is public. Sign in for eligibility checks and tournament alerts.',
     ],
-    'auth_actions' => [
-        'browse_tournaments' => 'Все Турниры',
-        'browse_tournaments_desc' => 'Поиск турниров по фильтрам',
-        'already_logged_in' => 'Вы уже вошли в аккаунт',
-        'already_logged_in_desc' => 'Используйте поиск и фильтры для навигации',
+    'featured' => [
+        'title' => 'Upcoming registration deadlines',
+        'empty' => 'No upcoming registration dates are listed. Browse all tournaments.',
     ],
     'sections' => [
-        'tournament_discovery' => [
-            'title' => 'Список Турниров',
-            'content' => 'Турниры автоматически обновляются с помощью сторонних турнирных ресурсов. Их можно искать по режиму, статусу, рейтингу и формату.',
-        ],
-        'tournament_history' => [
-            'title' => 'История Турниров',
-            'content' => 'Страница каждого турнира показывает даты, критерии, стафф, ссылки, результаты и исправления от коммьюнити. Если вы нашли ошибку, пролистните страницу до кнопки "Исправить информацию о турнире".',
-        ],
-        'user_profiles' => [
-            'title' => 'Профили Игроков',
-            'content' => 'Ваш профиль игрока показывает персональную историю турниров, стаффинга, места, тиммейтов и вклад в сайт.',
-        ],
         'how_to_use' => [
             'title' => 'Как использовать Tourney Method',
             'items' => [
-                0 => [
-                    'title' => 'Ищите турниры',
-                    'body' => 'Используйте фильтры для поиска по статусу регистрации, диапазону рейтингу, режиму, региону и формату.',
+                'registration' => [
+                    'title' => 'Registration alerts',
+                    'body' => 'Signed-in users can receive alerts for eligible tournaments when registration opens or closes within 24 hours.',
                 ],
-                1 => [
-                    'title' => 'Следите за стадией регистрации',
-                    'body' => 'Подпишитесь на уведомления, чтобы получать информацию об открытии или закрытии регистраций на подходящие вам по рейтингу/региону турниры.',
+                'participation' => [
+                    'title' => 'Participation records',
+                    'body' => 'Open your profile and add participation records for tournaments you played, including stage reached, placement, teammates, and match links.',
                 ],
-                2 => [
-                    'title' => 'Отслеживайте Вашу историю',
-                    'body' => 'Добавляйте в профиль записи об участии в турнирах, включая сыгранные стадии, место, тиммейтов и ссылки на матчи.',
-                ],
-                3 => [
-                    'title' => 'Улучшайте данные',
-                    'body' => 'Откройте страницу деталей турнира, пролистните вниз до кнопки "Исправить информацию о турнире" чтобы улучшить метаданные, стафф-лист, подиум или ссылки.',
+                'corrections' => [
+                    'title' => 'Tournament corrections',
+                    'body' => 'Open a tournament detail page, scroll to Contributions, and submit corrections for metadata, staff, podiums, or links.',
                 ],
             ],
-        ],
-        'eligibility_checking' => [
-            'title' => 'Проверка права на участие',
-            'content' => 'В некоторых турнирах для определения права на участие используется система взвешенного по бейджам сидинга (Badge Weighted Seeding или BWS). Эта система поддерживает как стандартные, так и пользовательские форматы BWS, включая методы, которые исключают из расчётов устаревшие бейджи (например, бейджи, полученные до 2022 года, не учитываются при расчёте). Это позволяет вам видеть, в каких турнирах вы можете участвовать в данный момент в зависимости от различных методов расчёта BWS.',
         ],
         'data_sources' => [
             'title' => 'Источники данных',

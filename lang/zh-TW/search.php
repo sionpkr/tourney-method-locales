@@ -2,15 +2,17 @@
 
 return [
     'search' => [
+        'error' => 'Search could not be completed. Try again.',
+        'session_expired' => 'Your session expired. Sign in again to search.',
+        'loading' => 'Searching...',
+        'staff' => 'Staff tournaments',
+        'podium' => 'Podium tournaments',
         'placeholder' => '搜尋比賽或玩家...',
-        'start_your_search' => '開始搜尋',
         'min_chars' => '輸入至少 3 个字符以搜尋比賽和玩家',
         'tournaments' => '比賽',
         'players' => '玩家',
         'view_all_tournaments' => '查看全部 :count 個比賽結果',
-        'view_all_players' => 'View all user results (Coming soon)',
         'no_tournaments' => '未找到匹配的比賽',
         'no_players' => '未找到匹配的玩家',
-        'close_desc' => '按 :esc 關閉',
     ],
 ];

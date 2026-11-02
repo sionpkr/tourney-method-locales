@@ -6,5 +6,6 @@ return [
         'select_mode' => 'Välj ditt huvudläge',
         'info' => 'Du kan ändra detta senare',
         'submit' => 'Avsluta inställningar',
+        'submitting' => 'Completing setup...',
     ],
 ];

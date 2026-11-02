@@ -1,11 +1,22 @@
 <?php
 
 return [
+    'deleted_user' => 'Deleted user',
+    'confirmation' => [
+        'title' => 'Confirm action',
+        'cancel' => 'Cancel',
+        'confirm' => 'Continue',
+        'javascript_required' => 'Enable JavaScript to use actions that require confirmation.',
+    ],
+    'dismiss_notification' => 'Dismiss notification',
+    'release_notes' => [
+        'title' => 'Site updates',
+        'theme' => 'Choose a light or dark theme from navigation.',
+        'countries' => 'Tournament details show allowed countries.',
+    ],
     'changelog' => [
-        'eyebrow' => 'Что изменилось',
-        'dont_show_again' => 'Больше не показывать это обновление',
-        'ok' => 'Окей',
-        'close' => 'Закрыть список изменений',
+        'title' => 'Changelog',
+        'description' => 'Updates to tournament discovery, profiles, and participation records.',
     ],
     'errors' => [
         404 => [
@@ -16,22 +27,27 @@ return [
         ],
         401 => [
             'heading' => 'Требуется аутентификация',
+            'message' => 'Sign in with your osu! account to continue.',
         ],
         403 => [
             'heading' => 'Доступ запрещен',
+            'message' => 'You do not have permission to view this page.',
         ],
         500 => [
             'heading' => 'Что-то пошло не так',
+            'message' => 'An unexpected error occurred. Please try again.',
         ],
     ],
     'nav' => [
+        'appearance' => 'Appearance',
+        'menu' => 'Menu',
+        'open_menu' => 'Open navigation',
         'tournaments' => 'Турниры',
         'dashboard' => 'Дэшборд',
         'admin' => 'Админ панель',
         'profile' => 'Профиль',
         'settings' => 'Настройки',
         'device_theme' => 'Device theme',
-        'use_device_theme' => 'Use Device theme',
         'dark_theme' => 'Dark theme',
         'light_theme' => 'Light theme',
         'search' => 'Поиск',
@@ -39,6 +55,7 @@ return [
         'login_with_osu' => 'Войти с помощью osu!',
     ],
     'actions' => [
+        'close' => 'Close',
         'reload' => 'Попробовать ещё раз',
     ],
     'messages' => [
@@ -50,6 +67,10 @@ return [
         'remove_read' => 'Remove all read notifications',
         'loading' => 'Загрузка уведомлений...',
         'empty' => 'Еще нет уведомлений.',
+        'load_error' => 'Notifications could not be loaded. Try again.',
+        'update_error' => 'Notifications could not be updated. Try again.',
+        'dismiss' => 'Dismiss notification',
+        'unread_count' => ':count unread',
         'fields' => [
             'team_name' => 'Название команды',
             'stage_value' => 'Итоговая стадия',
@@ -103,6 +124,5 @@ return [
         'discord' => 'Discord-сервер',
         'donate' => 'Поддержать',
         'contribute' => 'Внести свой вклад',
-        'copyright' => '@ 2026 osu! Korean Tourney Hub',
     ],
 ];

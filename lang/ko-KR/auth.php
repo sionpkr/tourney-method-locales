@@ -6,5 +6,6 @@ return [
         'select_mode' => '메인 게임모드를 선택하세요',
         'info' => '나중에 변경할 수 있습니다',
         'submit' => '설정 완료',
+        'submitting' => 'Completing setup...',
     ],
 ];

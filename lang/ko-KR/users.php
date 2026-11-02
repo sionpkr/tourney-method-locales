@@ -12,6 +12,10 @@ return [
         'matches' => '경기',
         'recap' => '연말결산',
     ],
+    'badges' => [
+        'empty' => 'No badges yet.',
+        'empty_description' => 'Tournament badges will appear here.',
+    ],
     'contributions' => [
         'title' => '기여',
         'count' => '토너먼트 :count개|토너먼트 :count개',
@@ -32,6 +36,13 @@ return [
         'no_player_desc' => '이 유저는 토너먼트 입상 기록이 없습니다.',
     ],
     'participation' => [
+        'setup_required' => 'Complete your profile setup before adding, editing or reporting participation.',
+        'saving' => 'Saving changes...',
+        'javascript_required' => 'Enable JavaScript to add, edit or manage participation records.',
+        'validation' => [
+            'invalid_mp_link' => 'Enter a positive osu! match ID or a valid match URL.',
+            'conflicting_mp_link' => 'The match ID and URL must refer to the same match.',
+        ],
         'add_title' => '참여 기록 추가',
         'edit_title' => '참여 기록 수정',
         'delete_confirm_title' => '참여 기록 삭제 확인',
@@ -45,11 +56,14 @@ return [
         'tutorial' => [
             'title' => '참여 기록을 추가하세요',
             'body' => '참여 기록을 추가하려면 토너먼트를 검색하고 최종 결과를 선택한 다음 팀원과 경기 링크를 추가하고 프로필에 저장하세요.',
-            'dismiss' => '참여 기록 추가 튜토리얼 닫기',
         ],
         'flash' => [
+            'request_failed' => 'Unable to update participation. Try again.',
+            'session_expired' => 'Your session expired. Copy any unsaved input, then reload this page.',
             'saved' => '참여 기록이 저장되었습니다.',
             'deleted' => '참여 기록이 삭제되었습니다.',
+            'deletion_request_changed' => 'A deletion request is not available for this record. Reload the profile to review its current actions.',
+            'refresh_required' => 'Reload this profile to check the result before trying again. Copy any unsaved input before closing or reloading.',
             'deletion_requested' => '관리자에게 삭제 요청이 전송되었습니다.',
             'deletion_cancelled' => '삭제 요청이 취소되었습니다.',
             'deletion_cancel_missing' => '취소할 삭제 요청이 없습니다.',
@@ -64,6 +78,14 @@ return [
             'report_sent' => '신고가 접수되었습니다.',
         ],
         'actions' => [
+            'reload_profile' => 'Reload profile',
+            'move_match_up' => 'Move match up',
+            'move_match_down' => 'Move match down',
+            'remove_match' => 'Remove match',
+            'remove_teammate' => 'Remove :name',
+            'search_by_username' => 'Search by username',
+            'reorder_match' => 'Drag to reorder match',
+            'match_position' => 'Match moved to position :position.',
             'add' => '추가',
             'save' => '저장',
             'edit' => '수정',
@@ -87,6 +109,7 @@ return [
             'bracket' => '대진표',
         ],
         'report' => [
+            'pending' => 'Report pending review',
             'title' => '대회 참여 기록 신고',
             'category' => '카테고리',
             'explanation' => '추가 설명',
@@ -97,6 +120,9 @@ return [
             ],
         ],
         'filters' => [
+            'focused_tournament' => 'Showing one tournament only.',
+            'clear_tournament' => 'Clear tournament filter',
+            'no_results' => 'No records match these filters.',
             'search' => '대회 또는 팀원 검색',
             'mode' => '게임 모드',
             'all_modes' => '모든 모드',
@@ -115,6 +141,8 @@ return [
             'delete_locked' => '삭제 불가능',
         ],
         'fields' => [
+            'match_number' => 'Match :number',
+            'forfeit' => 'Forfeit',
             'tournament' => '대회',
             'search_tournament' => '대회 이름 입력',
             'finished_stage' => '최종 결과',
@@ -159,6 +187,10 @@ return [
             'tryout' => 'Tryout: 월드컵 포맷에서 국가 선발전에 참가했지만 선발되지 않음',
         ],
         'no_teammate_results' => '플레이어를 찾을 수 없습니다.',
+        'no_tournament_results' => 'No tournaments found for that name.',
+        'search_failed' => 'Search is unavailable right now. Try again.',
+        'invalid_teammate_id' => 'Enter a valid osu! ID using digits only.',
+        'duplicate_teammate' => 'This teammate is already listed.',
         'add_teammate_manual' => 'osu! ID로 수동 추가',
         'empty_matches' => '경기 기록이 없습니다.',
         'lobby_search' => [
@@ -176,6 +208,7 @@ return [
             'bracket' => 'Bracket',
         ],
         'stats' => [
+            'summary' => 'Participation statistics',
             'groups' => [
                 'total' => 'Total',
                 'country' => 'Country',

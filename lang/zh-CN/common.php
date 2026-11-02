@@ -1,11 +1,22 @@
 <?php
 
 return [
+    'deleted_user' => 'Deleted user',
+    'confirmation' => [
+        'title' => 'Confirm action',
+        'cancel' => 'Cancel',
+        'confirm' => 'Continue',
+        'javascript_required' => 'Enable JavaScript to use actions that require confirmation.',
+    ],
+    'dismiss_notification' => 'Dismiss notification',
+    'release_notes' => [
+        'title' => 'Site updates',
+        'theme' => 'Choose a light or dark theme from navigation.',
+        'countries' => 'Tournament details show allowed countries.',
+    ],
     'changelog' => [
-        'eyebrow' => '有什么变化',
-        'dont_show_again' => '不再显示此更新',
-        'ok' => '明白了',
-        'close' => '关闭更新日志',
+        'title' => 'Changelog',
+        'description' => 'Updates to tournament discovery, profiles, and participation records.',
     ],
     'errors' => [
         404 => [
@@ -16,22 +27,27 @@ return [
         ],
         401 => [
             'heading' => '需要身份验证',
+            'message' => 'Sign in with your osu! account to continue.',
         ],
         403 => [
             'heading' => '访问被拒绝',
+            'message' => 'You do not have permission to view this page.',
         ],
         500 => [
             'heading' => '服务器出错了',
+            'message' => 'An unexpected error occurred. Please try again.',
         ],
     ],
     'nav' => [
+        'appearance' => 'Appearance',
+        'menu' => 'Menu',
+        'open_menu' => 'Open navigation',
         'tournaments' => '比赛',
         'dashboard' => '仪表盘',
         'admin' => '管理',
         'profile' => '个人资料',
         'settings' => '设置',
         'device_theme' => 'Device theme',
-        'use_device_theme' => 'Use Device theme',
         'dark_theme' => 'Dark theme',
         'light_theme' => 'Light theme',
         'search' => '搜索',
@@ -39,6 +55,7 @@ return [
         'login_with_osu' => '使用 osu! 账号登录',
     ],
     'actions' => [
+        'close' => 'Close',
         'reload' => '重试',
     ],
     'messages' => [
@@ -50,6 +67,10 @@ return [
         'remove_read' => 'Remove all read notifications',
         'loading' => '正在加载通知……',
         'empty' => '暂无通知。',
+        'load_error' => 'Notifications could not be loaded. Try again.',
+        'update_error' => 'Notifications could not be updated. Try again.',
+        'dismiss' => 'Dismiss notification',
+        'unread_count' => ':count unread',
         'fields' => [
             'team_name' => '队伍名称',
             'stage_value' => '最终阶段',
@@ -103,6 +124,5 @@ return [
         'discord' => 'Discord',
         'donate' => '捐赠',
         'contribute' => '贡献',
-        'copyright' => '© 2026 osu! Korean Tourney Hub',
     ],
 ];

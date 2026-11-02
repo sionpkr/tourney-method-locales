@@ -44,7 +44,7 @@
             "flag_country": "gr"
         },
         "es-ES": {
-            "translation_progress": 34,
+            "translation_progress": 16,
             "approval_progress": 0,
             "native_name": "espa\u00f1ol",
             "flag_country": "es"
@@ -86,8 +86,8 @@
             "flag_country": "jp"
         },
         "ko-KR": {
-            "translation_progress": 63,
-            "approval_progress": 6,
+            "translation_progress": 40,
+            "approval_progress": 5,
             "native_name": "\ud55c\uad6d\uc5b4",
             "flag_country": "kr"
         },
@@ -122,14 +122,14 @@
             "flag_country": "pt"
         },
         "ro-RO": {
-            "translation_progress": 11,
+            "translation_progress": 6,
             "approval_progress": 0,
             "native_name": "rom\u00e2n\u0103",
             "flag_country": "ro"
         },
         "ru-RU": {
-            "translation_progress": 98,
-            "approval_progress": 98,
+            "translation_progress": 64,
+            "approval_progress": 64,
             "native_name": "\u0440\u0443\u0441\u0441\u043a\u0438\u0439",
             "flag_country": "ru"
         },
@@ -164,13 +164,13 @@
             "flag_country": "vn"
         },
         "zh-CN": {
-            "translation_progress": 98,
+            "translation_progress": 64,
             "approval_progress": 0,
             "native_name": "\u4e2d\u6587\uff08\u4e2d\u56fd\uff09",
             "flag_country": "cn"
         },
         "zh-TW": {
-            "translation_progress": 22,
+            "translation_progress": 11,
             "approval_progress": 0,
             "native_name": "\u4e2d\u6587\uff08\u53f0\u7063\uff09",
             "flag_country": "tw"

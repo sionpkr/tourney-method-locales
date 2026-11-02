@@ -6,5 +6,6 @@ return [
         'select_mode' => 'Selectează modul tău principal',
         'info' => 'Poți schimba asta mai târziu',
         'submit' => 'Finalizează configurarea',
+        'submitting' => 'Completing setup...',
     ],
 ];

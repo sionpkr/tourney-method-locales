@@ -1,11 +1,22 @@
 <?php
 
 return [
+    'deleted_user' => 'Deleted user',
+    'confirmation' => [
+        'title' => 'Confirm action',
+        'cancel' => 'Cancel',
+        'confirm' => 'Continue',
+        'javascript_required' => 'Enable JavaScript to use actions that require confirmation.',
+    ],
+    'dismiss_notification' => 'Dismiss notification',
+    'release_notes' => [
+        'title' => 'Site updates',
+        'theme' => 'Choose a light or dark theme from navigation.',
+        'countries' => 'Tournament details show allowed countries.',
+    ],
     'changelog' => [
-        'eyebrow' => 'Lo que cambió',
-        'dont_show_again' => 'No mostrar esta actualización nuevamente',
-        'ok' => 'Entendido',
-        'close' => 'Cerrar registro de cambios',
+        'title' => 'Changelog',
+        'description' => 'Updates to tournament discovery, profiles, and participation records.',
     ],
     'errors' => [
         404 => [
@@ -16,22 +27,27 @@ return [
         ],
         401 => [
             'heading' => 'Autentificación requerida',
+            'message' => 'Sign in with your osu! account to continue.',
         ],
         403 => [
             'heading' => 'Acceso prohibido',
+            'message' => 'You do not have permission to view this page.',
         ],
         500 => [
             'heading' => 'Algo ha salido mal',
+            'message' => 'An unexpected error occurred. Please try again.',
         ],
     ],
     'nav' => [
+        'appearance' => 'Appearance',
+        'menu' => 'Menu',
+        'open_menu' => 'Open navigation',
         'tournaments' => 'Torneos',
         'dashboard' => 'Panel de control',
         'admin' => 'Administrador',
         'profile' => 'Perfil',
         'settings' => 'Configuración',
         'device_theme' => 'Device theme',
-        'use_device_theme' => 'Use Device theme',
         'dark_theme' => 'Dark theme',
         'light_theme' => 'Light theme',
         'search' => 'Buscar',
@@ -39,6 +55,7 @@ return [
         'login_with_osu' => 'Iniciar sesión con osu!',
     ],
     'actions' => [
+        'close' => 'Close',
         'reload' => 'Inténtalo de nuevo',
     ],
     'messages' => [
@@ -50,6 +67,10 @@ return [
         'remove_read' => 'Remove all read notifications',
         'loading' => 'Cargando notificaciones...',
         'empty' => 'Aún no hay notificaciones.',
+        'load_error' => 'Notifications could not be loaded. Try again.',
+        'update_error' => 'Notifications could not be updated. Try again.',
+        'dismiss' => 'Dismiss notification',
+        'unread_count' => ':count unread',
         'fields' => [
             'team_name' => 'nombre del equipo',
             'stage_value' => 'etapa final',
@@ -103,6 +124,5 @@ return [
         'discord' => 'Servidor de Discord',
         'donate' => 'Donar',
         'contribute' => 'Contribuir',
-        'copyright' => '@ 2026 osu! Korean Tourney Hub',
     ],
 ];

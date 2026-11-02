@@ -12,6 +12,10 @@ return [
         'matches' => 'Статистика',
         'recap' => 'Итоги года',
     ],
+    'badges' => [
+        'empty' => 'No badges yet.',
+        'empty_description' => 'Tournament badges will appear here.',
+    ],
     'contributions' => [
         'title' => 'Вклад в сайт',
         'count' => ':count турнир|:count турнира|:count турниров',
@@ -32,6 +36,13 @@ return [
         'no_player_desc' => 'Игрок не занимал призовые места.',
     ],
     'participation' => [
+        'setup_required' => 'Complete your profile setup before adding, editing or reporting participation.',
+        'saving' => 'Saving changes...',
+        'javascript_required' => 'Enable JavaScript to add, edit or manage participation records.',
+        'validation' => [
+            'invalid_mp_link' => 'Enter a positive osu! match ID or a valid match URL.',
+            'conflicting_mp_link' => 'The match ID and URL must refer to the same match.',
+        ],
         'add_title' => 'Добавить участие в турнире',
         'edit_title' => 'Изменить участие в турнире',
         'delete_confirm_title' => 'Удалить участие в турнире',
@@ -45,11 +56,14 @@ return [
         'tutorial' => [
             'title' => 'Добавить участие в турнире',
             'body' => 'Нажмите "Добавить" чтобы найти турнир, выберите финальную стадию или место, добавьте тиммейтов и ссылки на все матчи, и сохраните.',
-            'dismiss' => 'Закрыть туториал',
         ],
         'flash' => [
+            'request_failed' => 'Unable to update participation. Try again.',
+            'session_expired' => 'Your session expired. Copy any unsaved input, then reload this page.',
             'saved' => 'Запись участия в турнире сохранена.',
             'deleted' => 'Запись участия в турнире удалена.',
+            'deletion_request_changed' => 'A deletion request is not available for this record. Reload the profile to review its current actions.',
+            'refresh_required' => 'Reload this profile to check the result before trying again. Copy any unsaved input before closing or reloading.',
             'deletion_requested' => 'Запрос на удаление отправлен.',
             'deletion_cancelled' => 'Запрос на удаление отменен.',
             'deletion_cancel_missing' => 'Нет ожидающих запросов на удаление.',
@@ -64,6 +78,14 @@ return [
             'report_sent' => 'Репорт на информацию об участии отправлена на рассмотрение.',
         ],
         'actions' => [
+            'reload_profile' => 'Reload profile',
+            'move_match_up' => 'Move match up',
+            'move_match_down' => 'Move match down',
+            'remove_match' => 'Remove match',
+            'remove_teammate' => 'Remove :name',
+            'search_by_username' => 'Search by username',
+            'reorder_match' => 'Drag to reorder match',
+            'match_position' => 'Match moved to position :position.',
             'add' => 'Добавить',
             'save' => 'Сохранить',
             'edit' => 'Изменить',
@@ -87,6 +109,7 @@ return [
             'bracket' => 'Сетка',
         ],
         'report' => [
+            'pending' => 'Report pending review',
             'title' => 'Отправить жалобу на данную запись об участии',
             'category' => 'Категория',
             'explanation' => 'Дополнительная информация',
@@ -97,6 +120,9 @@ return [
             ],
         ],
         'filters' => [
+            'focused_tournament' => 'Showing one tournament only.',
+            'clear_tournament' => 'Clear tournament filter',
+            'no_results' => 'No records match these filters.',
             'search' => 'Найти турнир или тиммейта',
             'mode' => 'Режим',
             'all_modes' => 'Все режимы',
@@ -115,6 +141,8 @@ return [
             'delete_locked' => 'Удаление заблокировано',
         ],
         'fields' => [
+            'match_number' => 'Match :number',
+            'forfeit' => 'Forfeit',
             'tournament' => 'Турнир',
             'search_tournament' => 'Название турнира',
             'finished_stage' => 'Итоговая стадия',
@@ -159,6 +187,10 @@ return [
             'tryout' => 'Tryout: Игрок сыграл трайауты, но не был выбран в команду.',
         ],
         'no_teammate_results' => 'Игрок не найден.',
+        'no_tournament_results' => 'No tournaments found for that name.',
+        'search_failed' => 'Search is unavailable right now. Try again.',
+        'invalid_teammate_id' => 'Enter a valid osu! ID using digits only.',
+        'duplicate_teammate' => 'This teammate is already listed.',
         'add_teammate_manual' => 'добавить osu! ID вручную',
         'empty_matches' => 'Матчей не добавлено.',
         'lobby_search' => [
@@ -176,6 +208,7 @@ return [
             'bracket' => 'Сетка',
         ],
         'stats' => [
+            'summary' => 'Participation statistics',
             'groups' => [
                 'total' => 'Всего',
                 'country' => 'Страна',

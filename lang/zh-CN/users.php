@@ -12,6 +12,10 @@ return [
         'matches' => '对局数据',
         'recap' => '年度回顾',
     ],
+    'badges' => [
+        'empty' => 'No badges yet.',
+        'empty_description' => 'Tournament badges will appear here.',
+    ],
     'contributions' => [
         'title' => '贡献',
         'count' => ':count tournament|:count tournaments',
@@ -32,6 +36,13 @@ return [
         'no_player_desc' => '该玩家尚未在任何比赛中获得过名次。',
     ],
     'participation' => [
+        'setup_required' => 'Complete your profile setup before adding, editing or reporting participation.',
+        'saving' => 'Saving changes...',
+        'javascript_required' => 'Enable JavaScript to add, edit or manage participation records.',
+        'validation' => [
+            'invalid_mp_link' => 'Enter a positive osu! match ID or a valid match URL.',
+            'conflicting_mp_link' => 'The match ID and URL must refer to the same match.',
+        ],
         'add_title' => '添加参赛记录',
         'edit_title' => '编辑参赛记录',
         'delete_confirm_title' => '删除参赛记录',
@@ -45,11 +56,14 @@ return [
         'tutorial' => [
             'title' => '添加您的参赛历史',
             'body' => '使用“添加”功能搜索比赛，选择最终轮次或名次，添加队友及对局链接，然后将其保存到你的个人资料中。',
-            'dismiss' => '关闭教程',
         ],
         'flash' => [
+            'request_failed' => 'Unable to update participation. Try again.',
+            'session_expired' => 'Your session expired. Copy any unsaved input, then reload this page.',
             'saved' => '参赛记录已保存。',
             'deleted' => '参赛记录已删除。',
+            'deletion_request_changed' => 'A deletion request is not available for this record. Reload the profile to review its current actions.',
+            'refresh_required' => 'Reload this profile to check the result before trying again. Copy any unsaved input before closing or reloading.',
             'deletion_requested' => '删除请求已发送，等待管理员审核。',
             'deletion_cancelled' => '删除请求已取消。',
             'deletion_cancel_missing' => '没有待处理的删除请求可取消。',
@@ -64,6 +78,14 @@ return [
             'report_sent' => '提交管理员审核的参赛记录举报。',
         ],
         'actions' => [
+            'reload_profile' => 'Reload profile',
+            'move_match_up' => 'Move match up',
+            'move_match_down' => 'Move match down',
+            'remove_match' => 'Remove match',
+            'remove_teammate' => 'Remove :name',
+            'search_by_username' => 'Search by username',
+            'reorder_match' => 'Drag to reorder match',
+            'match_position' => 'Match moved to position :position.',
             'add' => '添加',
             'save' => '保存',
             'edit' => '编辑',
@@ -87,6 +109,7 @@ return [
             'bracket' => '对阵',
         ],
         'report' => [
+            'pending' => 'Report pending review',
             'title' => '举报参赛记录',
             'category' => '类别',
             'explanation' => '附加说明',
@@ -97,6 +120,9 @@ return [
             ],
         ],
         'filters' => [
+            'focused_tournament' => 'Showing one tournament only.',
+            'clear_tournament' => 'Clear tournament filter',
+            'no_results' => 'No records match these filters.',
             'search' => '搜索比赛或队友',
             'mode' => '游戏模式',
             'all_modes' => '所有模式',
@@ -115,6 +141,8 @@ return [
             'delete_locked' => '删除已锁定',
         ],
         'fields' => [
+            'match_number' => 'Match :number',
+            'forfeit' => 'Forfeit',
             'tournament' => '比赛',
             'search_tournament' => '输入比赛名',
             'finished_stage' => '最终轮次',
@@ -159,6 +187,10 @@ return [
             'tryout' => 'Tryout：参加了世界杯/国家队/队伍选拔但未入选。',
         ],
         'no_teammate_results' => '未找到该用户名的用户。',
+        'no_tournament_results' => 'No tournaments found for that name.',
+        'search_failed' => 'Search is unavailable right now. Try again.',
+        'invalid_teammate_id' => 'Enter a valid osu! ID using digits only.',
+        'duplicate_teammate' => 'This teammate is already listed.',
         'add_teammate_manual' => '通过 osu! ID 手动添加',
         'empty_matches' => '尚未添加对局。',
         'lobby_search' => [
@@ -176,6 +208,7 @@ return [
             'bracket' => '对阵',
         ],
         'stats' => [
+            'summary' => 'Participation statistics',
             'groups' => [
                 'total' => '总计',
                 'country' => '国家',

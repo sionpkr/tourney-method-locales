@@ -3,34 +3,31 @@
 return [
     'title' => 'Внести вклад',
     'description' => 'Помогите улучшить Tourney Method с помощью перевода, исправлений информации о турнирах, добавления истории об участии, а также материальной поддержки.',
-    'hero' => [
-        'title' => 'Внести вклад в развитие Tourney Method',
-        'body' => 'Tourney Method становится лучше, когда игроки и стафф делятся своей информацией. Вы можете помочь с переводом, метаданными турниров, стафф-листами, информацией о подиумах и ссылками.',
-    ],
+    'external_note' => 'Opens in a new tab',
     'translation' => [
         'title' => 'Перевести сайт',
-        'body' => 'Помогите Tourney Method стать более доступным для большего количества турнирных сообществ, сделав перевод на Crowdin.',
+        'instructions' => 'Help translate the site through Crowdin.',
         'action' => 'Открыть Crowdin',
     ],
     'corrections' => [
         'title' => 'Исправить метаданные турнира',
-        'body' => 'Если информация на странице турнира отсутствует или написана неверно, используйте кнопку исправления в деталях турнира.',
-        'steps' => [
-            0 => 'Откройте страницу турнира.',
-            1 => 'Пролистайте вниз до блока Авторы правок.',
-            2 => 'Нажмите кнопку "Исправить информацию о турнире" и внесите нужную информацию.',
-        ],
-        'add_body' => 'Или же Вы можете отправить заявку на добавления турнира, если его еще нет на сайте.',
-        'add_action' => 'Добавить новый турнир',
+        'instructions' => 'Open a tournament\'s Contributions section to correct its information, staff, podiums or links.',
+        'action' => 'Browse tournaments',
+    ],
+    'new_tournament' => [
+        'title' => 'Add a missing tournament',
+        'instructions' => 'Submit a missing tournament for review.',
+        'action' => 'Add Tournament',
+        'guest_action' => 'Sign in to add a tournament',
     ],
     'personal_participation' => [
         'title' => 'Добавить историю участий в турнирах',
-        'body' => 'Ваша история турниров помогает Tourney Method формировать подробную статистику: списки команд, финальные результаты, ссылки на матчи и историю выступлений каждого игрока.',
+        'instructions' => 'Add your teams, final results and match links from your profile.',
         'action' => 'Перейдите в свой профиль',
+        'guest_action' => 'Sign in to view your profile',
     ],
     'donate' => [
         'title' => 'Поддержать инфраструктуру и разработку',
-        'body' => 'Донаты идут на оплату инфраструктуры и времени, затрачиваемого на то, чтобы турнирная статистика оставалась полезной для комьюнити.',
         'kofi' => 'Пожертвовать на Ko-fi',
         'paypal' => 'Пожертвовать через PayPal',
         'bank_label' => 'Банковский перевод',

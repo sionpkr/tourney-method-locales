@@ -4,7 +4,7 @@ return [
     'title' => '设置',
     'discord_webhook' => [
         'title' => 'Discord Webhook',
-        'description' => '直接在你的 Discord 服务器或私聊中接收比赛通知。',
+        'channel_description' => 'Receive tournament notifications in a Discord server channel.',
         'webhook_url' => 'Webhook URL',
         'valid' => '有效',
         'invalid' => '无效',
@@ -12,8 +12,10 @@ return [
         'how_to_url' => 'https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks',
         'test_button' => '发送测试消息',
         'test_sending' => '发送中...',
+        'test_requires_javascript' => 'Enable JavaScript to send a test message.',
         'test_success' => '测试消息已发送！请检查你的 Discord。',
         'test_error' => '测试消息发送失败。',
+        'save_before_test' => 'Save your webhook URL before sending a test message.',
     ],
     'game_mode' => [
         'title' => '主要游戏模式',

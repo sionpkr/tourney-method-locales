@@ -1,11 +1,22 @@
 <?php
 
 return [
+    'deleted_user' => 'Deleted user',
+    'confirmation' => [
+        'title' => 'Confirm action',
+        'cancel' => 'Cancel',
+        'confirm' => 'Continue',
+        'javascript_required' => 'Enable JavaScript to use actions that require confirmation.',
+    ],
+    'dismiss_notification' => 'Dismiss notification',
+    'release_notes' => [
+        'title' => 'Site updates',
+        'theme' => 'Choose a light or dark theme from navigation.',
+        'countries' => 'Tournament details show allowed countries.',
+    ],
     'changelog' => [
-        'eyebrow' => 'What changed',
-        'dont_show_again' => 'Do not show this update again',
-        'ok' => 'Got it',
-        'close' => 'Close changelog',
+        'title' => 'Changelog',
+        'description' => 'Updates to tournament discovery, profiles, and participation records.',
     ],
     'errors' => [
         404 => [
@@ -16,22 +27,27 @@ return [
         ],
         401 => [
             'heading' => '인증이 필요합니다',
+            'message' => 'Sign in with your osu! account to continue.',
         ],
         403 => [
             'heading' => '접근이 거부되었습니다',
+            'message' => 'You do not have permission to view this page.',
         ],
         500 => [
             'heading' => '문제가 발생했습니다',
+            'message' => 'An unexpected error occurred. Please try again.',
         ],
     ],
     'nav' => [
+        'appearance' => 'Appearance',
+        'menu' => 'Menu',
+        'open_menu' => 'Open navigation',
         'tournaments' => '토너먼트',
         'dashboard' => '대시보드',
         'admin' => '관리자',
         'profile' => '프로필',
         'settings' => '설정',
         'device_theme' => 'Device theme',
-        'use_device_theme' => 'Use Device theme',
         'dark_theme' => 'Dark theme',
         'light_theme' => 'Light theme',
         'search' => '검색',
@@ -39,6 +55,7 @@ return [
         'login_with_osu' => 'osu!로 로그인',
     ],
     'actions' => [
+        'close' => 'Close',
         'reload' => '다시 시도',
     ],
     'messages' => [
@@ -50,6 +67,10 @@ return [
         'remove_read' => 'Remove all read notifications',
         'loading' => '알림 로드 중...',
         'empty' => '읽지 않은 알림이 없습니다.',
+        'load_error' => 'Notifications could not be loaded. Try again.',
+        'update_error' => 'Notifications could not be updated. Try again.',
+        'dismiss' => 'Dismiss notification',
+        'unread_count' => ':count unread',
         'fields' => [
             'team_name' => '팀 이름',
             'stage_value' => '최종 스테이지',
@@ -103,6 +124,5 @@ return [
         'discord' => '디스코드',
         'donate' => '후원',
         'contribute' => 'Contribute',
-        'copyright' => '© 2026 osu! Korean Tourney Hub',
     ],
 ];

@@ -4,7 +4,7 @@ return [
     'title' => 'Settings',
     'discord_webhook' => [
         'title' => 'Discord Webhook',
-        'description' => 'Receive tournament notifications directly in your Discord server or DM.',
+        'channel_description' => 'Receive tournament notifications in a Discord server channel.',
         'webhook_url' => 'Webhook URL',
         'valid' => 'Valid',
         'invalid' => 'Invalid',
@@ -12,8 +12,10 @@ return [
         'how_to_url' => 'https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks',
         'test_button' => 'Send Test Message',
         'test_sending' => 'Sending...',
+        'test_requires_javascript' => 'Enable JavaScript to send a test message.',
         'test_success' => 'Test message sent! Check your Discord.',
         'test_error' => 'Failed to send test message.',
+        'save_before_test' => 'Save your webhook URL before sending a test message.',
     ],
     'game_mode' => [
         'title' => 'Main Game Mode',

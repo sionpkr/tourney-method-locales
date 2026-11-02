@@ -12,6 +12,10 @@ return [
         'matches' => 'Match Statistics',
         'recap' => 'Year Recap',
     ],
+    'badges' => [
+        'empty' => 'No badges yet.',
+        'empty_description' => 'Tournament badges will appear here.',
+    ],
     'contributions' => [
         'title' => 'Contributions',
         'count' => ':count tournament|:count tournaments',
@@ -32,6 +36,13 @@ return [
         'no_player_desc' => 'This player hasn\'t placed in any tournaments.',
     ],
     'participation' => [
+        'setup_required' => 'Complete your profile setup before adding, editing or reporting participation.',
+        'saving' => 'Saving changes...',
+        'javascript_required' => 'Enable JavaScript to add, edit or manage participation records.',
+        'validation' => [
+            'invalid_mp_link' => 'Enter a positive osu! match ID or a valid match URL.',
+            'conflicting_mp_link' => 'The match ID and URL must refer to the same match.',
+        ],
         'add_title' => 'Add Participation Record',
         'edit_title' => 'Edit Participation Record',
         'delete_confirm_title' => 'Delete Participation Record',
@@ -45,11 +56,14 @@ return [
         'tutorial' => [
             'title' => 'Add your participation history',
             'body' => 'Use Add to search a tournament, choose the final stage or placement, add teammates and match links, then save it to your profile.',
-            'dismiss' => 'Dismiss participation tutorial',
         ],
         'flash' => [
+            'request_failed' => 'Unable to update participation. Try again.',
+            'session_expired' => 'Your session expired. Copy any unsaved input, then reload this page.',
             'saved' => 'Participation record saved.',
             'deleted' => 'Participation record deleted.',
+            'deletion_request_changed' => 'A deletion request is not available for this record. Reload the profile to review its current actions.',
+            'refresh_required' => 'Reload this profile to check the result before trying again. Copy any unsaved input before closing or reloading.',
             'deletion_requested' => 'Deletion request sent for admin review.',
             'deletion_cancelled' => 'Deletion request cancelled.',
             'deletion_cancel_missing' => 'There is no pending deletion request to cancel.',
@@ -64,6 +78,14 @@ return [
             'report_sent' => 'Participation report sent for admin review.',
         ],
         'actions' => [
+            'reload_profile' => 'Reload profile',
+            'move_match_up' => 'Move match up',
+            'move_match_down' => 'Move match down',
+            'remove_match' => 'Remove match',
+            'remove_teammate' => 'Remove :name',
+            'search_by_username' => 'Search by username',
+            'reorder_match' => 'Drag to reorder match',
+            'match_position' => 'Match moved to position :position.',
             'add' => 'Add',
             'save' => 'Save',
             'edit' => 'Edit',
@@ -87,6 +109,7 @@ return [
             'bracket' => 'Bracket',
         ],
         'report' => [
+            'pending' => 'Report pending review',
             'title' => 'Report Participation Record',
             'category' => 'Category',
             'explanation' => 'Additional explanation',
@@ -97,6 +120,9 @@ return [
             ],
         ],
         'filters' => [
+            'focused_tournament' => 'Showing one tournament only.',
+            'clear_tournament' => 'Clear tournament filter',
+            'no_results' => 'No records match these filters.',
             'search' => 'Search tournament or teammate',
             'mode' => 'Game Mode',
             'all_modes' => 'All Modes',
@@ -115,6 +141,8 @@ return [
             'delete_locked' => 'Delete locked',
         ],
         'fields' => [
+            'match_number' => 'Match :number',
+            'forfeit' => 'Forfeit',
             'tournament' => 'Tournament',
             'search_tournament' => 'Type tournament name',
             'finished_stage' => 'Finished Stage',
@@ -159,6 +187,10 @@ return [
             'tryout' => 'Tryout: Tried out for a World Cup/country/team roster but was not selected.',
         ],
         'no_teammate_results' => 'No users found for that username.',
+        'no_tournament_results' => 'No tournaments found for that name.',
+        'search_failed' => 'Search is unavailable right now. Try again.',
+        'invalid_teammate_id' => 'Enter a valid osu! ID using digits only.',
+        'duplicate_teammate' => 'This teammate is already listed.',
         'add_teammate_manual' => 'add manually by osu! ID',
         'empty_matches' => 'No matches added yet.',
         'lobby_search' => [
@@ -176,6 +208,7 @@ return [
             'bracket' => 'Bracket',
         ],
         'stats' => [
+            'summary' => 'Participation statistics',
             'groups' => [
                 'total' => 'Total',
                 'country' => 'Country',
